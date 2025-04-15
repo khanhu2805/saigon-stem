@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react"
+import Image from "next/image"
 
 export default function Footer() {
   return (
@@ -9,9 +10,7 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-bold">Về chúng tôi</h3>
             <div className="flex items-center space-x-2">
-              <div className="h-10 w-10 rounded-full bg-[#40C262] flex items-center justify-center text-white font-bold text-lg">
-                SG
-              </div>
+              <Image src={"/logosgs.svg"} alt="LOGO" height={64} width={64} />
               <span className="font-bold">Giáo dục Sài Gòn</span>
             </div>
             <p className="mt-4">
@@ -21,24 +20,42 @@ export default function Footer() {
           </div>
 
           <div>
-            <h3 className="mb-4 text-lg font-bold">Liên hệ</h3>
+            <h3 className="mb-4 text-lg font-bold">Chi nhánh HCM</h3>
             <div className="space-y-3">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
+                <p>36 Lê Quý Đôn, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>028 1234 5678</p>
+                <p>0123456789</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>info@giaoduc-saigon.vn</p>
+                <p>saigonstemhr@gmail.com</p>
               </div>
             </div>
           </div>
 
           <div>
+            <h3 className="mb-4 text-lg font-bold">Chi nhánh Đồng Nai</h3>
+            <div className="space-y-3">
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
+                <p>bla blabla</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
+                <p>0123456789</p>
+              </div>
+              <div className="flex items-center space-x-3">
+                <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />
+                <p>saigonstemhr@gmail.com</p>
+              </div>
+            </div>
+          </div>
+
+          {/* <div>
             <h3 className="mb-4 text-lg font-bold">Chương trình đào tạo</h3>
             <ul className="space-y-2">
               <li>
@@ -62,25 +79,21 @@ export default function Footer() {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
 
           <div>
             <h3 className="mb-4 text-lg font-bold">Kết nối với chúng tôi</h3>
             <div className="flex space-x-4">
               <Link
-                href="https://facebook.com"
+                target="_blank"
+                href="https://www.facebook.com/SaigonStem2023"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#024AAE] hover:bg-[#40C262] hover:text-white"
               >
                 <Facebook className="h-5 w-5" />
               </Link>
               <Link
-                href="https://instagram.com"
-                className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#024AAE] hover:bg-[#40C262] hover:text-white"
-              >
-                <Instagram className="h-5 w-5" />
-              </Link>
-              <Link
-                href="https://youtube.com"
+                target="_blank"
+                href="https://www.youtube.com/@SAIGONSTEM"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#024AAE] hover:bg-[#40C262] hover:text-white"
               >
                 <Youtube className="h-5 w-5" />

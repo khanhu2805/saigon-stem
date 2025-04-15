@@ -22,8 +22,8 @@ const formSchema = z.object({
   phone: z.string().min(10, {
     message: "Vui lòng nhập số điện thoại hợp lệ.",
   }),
-  message: z.string().min(10, {
-    message: "Vui lòng nhập nội dung cần tư vấn (tối thiểu 10 ký tự).",
+  message: z.string().min(0, {
+    message: "Vui lòng nhập nội dung cần tư vấn.",
   }),
 })
 

@@ -9,9 +9,9 @@ import { ThemeProvider } from "@/components/theme-provider"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+  icons: '/favicon_io/favicon.ico',
   title: "Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn",
-  description: "Đơn vị tiên phong trong lĩnh vực đào tạo STEM, Robotics và kỹ năng sống cho học sinh các cấp",
-    generator: 'v0.dev'
+  description: "Đơn vị tiên phong trong lĩnh vực đào tạo STEM, Robotics và kỹ năng sống cho học sinh các cấp"
 }
 
 export default function RootLayout({
