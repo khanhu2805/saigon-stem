@@ -1,6 +1,13 @@
-import Link from "next/link"
-import { Facebook, Instagram, Mail, MapPin, Phone, Youtube } from "lucide-react"
-import Image from "next/image"
+import Link from "next/link";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  MapPin,
+  Phone,
+  Youtube,
+} from "lucide-react";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -14,8 +21,9 @@ export default function Footer() {
               <span className="font-bold">Giáo dục Sài Gòn</span>
             </div>
             <p className="mt-4">
-              Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn - Đơn vị tiên phong trong lĩnh vực đào tạo STEM, Robotics
-              và kỹ năng sống cho học sinh các cấp.
+              Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn - Đơn vị tiên
+              phong trong lĩnh vực đào tạo STEM, Robotics và kỹ năng sống cho
+              học sinh các cấp.
             </p>
           </div>
 
@@ -117,11 +125,11 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/20 pt-6 text-center">
           <p>
-            &copy; {new Date().getFullYear()} Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn. Tất cả quyền được bảo
-            lưu.
+            &copy; {new Date().getFullYear()} Công ty TNHH Tư vấn và Đào tạo
+            Giáo dục Sài Gòn. Tất cả quyền được bảo lưu.
           </p>
         </div>
       </div>
     </footer>
-  )
+  );
 }

@@ -1,10 +1,17 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Brain, BotIcon as Robot, Users } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Brain, BotIcon as Robot, Users } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function ProgramsPage() {
   return (
@@ -20,9 +27,12 @@ export default function ProgramsPage() {
           priority
         />
         <div className="container relative z-20 flex h-full flex-col items-center justify-center text-center text-white">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">Chương trình đào tạo</h1>
+          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+            Chương trình đào tạo
+          </h1>
           <p className="max-w-2xl text-lg">
-            Khám phá các chương trình đào tạo đa dạng, được thiết kế phù hợp với từng độ tuổi và nhu cầu học tập
+            Khám phá các chương trình đào tạo đa dạng, được thiết kế phù hợp với
+            từng độ tuổi và nhu cầu học tập
           </p>
         </div>
       </section>
@@ -32,19 +42,31 @@ export default function ProgramsPage() {
         <div className="container">
           <Tabs defaultValue="stem" className="w-full">
             <TabsList className="mb-8 grid w-full grid-cols-2 md:grid-cols-4">
-              <TabsTrigger value="stem" className="data-[state=active]:bg-[#40C262] data-[state=active]:text-white">
+              <TabsTrigger
+                value="stem"
+                className="data-[state=active]:bg-[#40C262] data-[state=active]:text-white"
+              >
                 <Lightbulb className="mr-2 h-4 w-4" />
                 STEM sáng tạo
               </TabsTrigger>
-              <TabsTrigger value="robotics" className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white">
+              <TabsTrigger
+                value="robotics"
+                className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white"
+              >
                 <Robot className="mr-2 h-4 w-4" />
                 Robotics ứng dụng
               </TabsTrigger>
-              <TabsTrigger value="digital" className="data-[state=active]:bg-[#40C262] data-[state=active]:text-white">
+              <TabsTrigger
+                value="digital"
+                className="data-[state=active]:bg-[#40C262] data-[state=active]:text-white"
+              >
                 <Brain className="mr-2 h-4 w-4" />
                 Kỹ năng công dân số
               </TabsTrigger>
-              <TabsTrigger value="life" className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white">
+              <TabsTrigger
+                value="life"
+                className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white"
+              >
                 <Users className="mr-2 h-4 w-4" />
                 Kỹ năng sống
               </TabsTrigger>
@@ -52,10 +74,14 @@ export default function ProgramsPage() {
 
             <TabsContent value="stem" className="mt-0">
               <div className="mb-8">
-                <h2 className="mb-4 text-2xl font-bold text-[#40C262]">STEM sáng tạo</h2>
+                <h2 className="mb-4 text-2xl font-bold text-[#40C262]">
+                  STEM sáng tạo
+                </h2>
                 <p className="text-muted-foreground">
-                  Chương trình STEM sáng tạo giúp học sinh phát triển tư duy sáng tạo, kỹ năng giải quyết vấn đề và khả
-                  năng làm việc nhóm thông qua các dự án thực tế kết hợp Khoa học, Công nghệ, Kỹ thuật và Toán học.
+                  Chương trình STEM sáng tạo giúp học sinh phát triển tư duy
+                  sáng tạo, kỹ năng giải quyết vấn đề và khả năng làm việc nhóm
+                  thông qua các dự án thực tế kết hợp Khoa học, Công nghệ, Kỹ
+                  thuật và Toán học.
                 </p>
               </div>
 
@@ -78,7 +104,10 @@ export default function ProgramsPage() {
                       <p className="line-clamp-3">{program.description}</p>
                     </CardContent>
                     <CardFooter>
-                      <Link href={`/chuong-trinh-dao-tao/stem/${program.slug}`} className="w-full">
+                      <Link
+                        href={`/chuong-trinh-dao-tao/stem/${program.slug}`}
+                        className="w-full"
+                      >
                         <Button className="w-full bg-[#40C262] hover:bg-[#40C262]/90">
                           Xem chi tiết
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -92,10 +121,13 @@ export default function ProgramsPage() {
 
             <TabsContent value="robotics" className="mt-0">
               <div className="mb-8">
-                <h2 className="mb-4 text-2xl font-bold text-[#024AAE]">Robotics ứng dụng</h2>
+                <h2 className="mb-4 text-2xl font-bold text-[#024AAE]">
+                  Robotics ứng dụng
+                </h2>
                 <p className="text-muted-foreground">
-                  Chương trình Robotics ứng dụng giúp học sinh phát triển kỹ năng lập trình, tư duy logic và khả năng
-                  giải quyết vấn đề thông qua việc thiết kế, lắp ráp và lập trình robot.
+                  Chương trình Robotics ứng dụng giúp học sinh phát triển kỹ
+                  năng lập trình, tư duy logic và khả năng giải quyết vấn đề
+                  thông qua việc thiết kế, lắp ráp và lập trình robot.
                 </p>
               </div>
 
@@ -118,7 +150,10 @@ export default function ProgramsPage() {
                       <p className="line-clamp-3">{program.description}</p>
                     </CardContent>
                     <CardFooter>
-                      <Link href={`/chuong-trinh-dao-tao/robotics/${program.slug}`} className="w-full">
+                      <Link
+                        href={`/chuong-trinh-dao-tao/robotics/${program.slug}`}
+                        className="w-full"
+                      >
                         <Button className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90">
                           Xem chi tiết
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -132,11 +167,14 @@ export default function ProgramsPage() {
 
             <TabsContent value="digital" className="mt-0">
               <div className="mb-8">
-                <h2 className="mb-4 text-2xl font-bold text-[#40C262]">Kỹ năng công dân số</h2>
+                <h2 className="mb-4 text-2xl font-bold text-[#40C262]">
+                  Kỹ năng công dân số
+                </h2>
                 <p className="text-muted-foreground">
-                  Chương trình Kỹ năng công dân số trang bị cho học sinh các kiến thức và kỹ năng cần thiết để trở thành
-                  công dân số có trách nhiệm trong kỷ nguyên số, bao gồm an toàn trực tuyến, tư duy phản biện và đạo đức
-                  số.
+                  Chương trình Kỹ năng công dân số trang bị cho học sinh các
+                  kiến thức và kỹ năng cần thiết để trở thành công dân số có
+                  trách nhiệm trong kỷ nguyên số, bao gồm an toàn trực tuyến, tư
+                  duy phản biện và đạo đức số.
                 </p>
               </div>
 
@@ -159,7 +197,10 @@ export default function ProgramsPage() {
                       <p className="line-clamp-3">{program.description}</p>
                     </CardContent>
                     <CardFooter>
-                      <Link href={`/chuong-trinh-dao-tao/cong-dan-so/${program.slug}`} className="w-full">
+                      <Link
+                        href={`/chuong-trinh-dao-tao/cong-dan-so/${program.slug}`}
+                        className="w-full"
+                      >
                         <Button className="w-full bg-[#40C262] hover:bg-[#40C262]/90">
                           Xem chi tiết
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -173,10 +214,14 @@ export default function ProgramsPage() {
 
             <TabsContent value="life" className="mt-0">
               <div className="mb-8">
-                <h2 className="mb-4 text-2xl font-bold text-[#024AAE]">Kỹ năng sống</h2>
+                <h2 className="mb-4 text-2xl font-bold text-[#024AAE]">
+                  Kỹ năng sống
+                </h2>
                 <p className="text-muted-foreground">
-                  Chương trình Kỹ năng sống giúp học sinh phát triển các kỹ năng thiết yếu như giao tiếp, làm việc nhóm,
-                  tự phục vụ, quản lý cảm xúc và giải quyết xung đột, giúp các em tự tin và thành công trong cuộc sống.
+                  Chương trình Kỹ năng sống giúp học sinh phát triển các kỹ năng
+                  thiết yếu như giao tiếp, làm việc nhóm, tự phục vụ, quản lý
+                  cảm xúc và giải quyết xung đột, giúp các em tự tin và thành
+                  công trong cuộc sống.
                 </p>
               </div>
 
@@ -199,7 +244,10 @@ export default function ProgramsPage() {
                       <p className="line-clamp-3">{program.description}</p>
                     </CardContent>
                     <CardFooter>
-                      <Link href={`/chuong-trinh-dao-tao/ky-nang-song/${program.slug}`} className="w-full">
+                      <Link
+                        href={`/chuong-trinh-dao-tao/ky-nang-song/${program.slug}`}
+                        className="w-full"
+                      >
                         <Button className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90">
                           Xem chi tiết
                           <ArrowRight className="ml-2 h-4 w-4" />
@@ -214,11 +262,11 @@ export default function ProgramsPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
 
 // Missing import for Lightbulb
-import { Lightbulb } from "lucide-react"
+import { Lightbulb } from "lucide-react";
 
 // Sample data for STEM programs
 const stemPrograms = [
@@ -246,7 +294,7 @@ const stemPrograms = [
       "Chương trình STEM nâng cao dành cho học sinh trung học phổ thông, chuẩn bị cho các em tham gia các cuộc thi khoa học kỹ thuật và định hướng nghề nghiệp.",
     image: "/placeholder.svg?height=300&width=500",
   },
-]
+];
 
 // Sample data for Robotics programs
 const roboticsPrograms = [
@@ -274,7 +322,7 @@ const roboticsPrograms = [
       "Chương trình Robotics chuyên sâu giúp học sinh phát triển các dự án robot phức tạp, ứng dụng trí tuệ nhân tạo và chuẩn bị cho các cuộc thi quốc tế.",
     image: "/placeholder.svg?height=300&width=500",
   },
-]
+];
 
 // Sample data for Digital Citizenship programs
 const digitalPrograms = [
@@ -302,7 +350,7 @@ const digitalPrograms = [
       "Chương trình giúp học sinh hiểu và áp dụng các nguyên tắc đạo đức số, xây dựng danh tiếng số tích cực và trở thành công dân số có trách nhiệm.",
     image: "/placeholder.svg?height=300&width=500",
   },
-]
+];
 
 // Sample data for Life Skills programs
 const lifeSkillsPrograms = [
@@ -330,4 +378,4 @@ const lifeSkillsPrograms = [
       "Chương trình giúp học sinh nhận diện, hiểu và quản lý cảm xúc của bản thân, xây dựng sự tự tin và khả năng ứng phó với áp lực.",
     image: "/placeholder.svg?height=300&width=500",
   },
-]
+];

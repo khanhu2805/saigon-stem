@@ -1,42 +1,57 @@
-"use client"
+"use client";
 
-import { useEffect, useState } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-import { BarChart3, FileText, Home, LayoutDashboard, LogOut, Mail, Settings, Users } from "lucide-react"
+import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import {
+  BarChart3,
+  FileText,
+  Home,
+  LayoutDashboard,
+  LogOut,
+  Mail,
+  Settings,
+  Users,
+} from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
-import { toast } from "@/components/ui/use-toast"
-import { Toaster } from "@/components/ui/toaster"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { toast } from "@/components/ui/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 export default function AdminDashboard() {
-  const [isClient, setIsClient] = useState(false)
-  const router = useRouter()
+  const [isClient, setIsClient] = useState(false);
+  const router = useRouter();
 
   useEffect(() => {
-    setIsClient(true)
+    setIsClient(true);
     // Check if user is authenticated
-    const token = localStorage.getItem("adminToken")
+    const token = localStorage.getItem("adminToken");
     if (!token) {
-      router.push("/admin/login")
+      router.push("/admin/login");
     }
-  }, [router])
+  }, [router]);
 
   const handleLogout = () => {
-    localStorage.removeItem("adminToken")
+    localStorage.removeItem("adminToken");
     toast({
       title: "Đăng xuất thành công!",
       description: "Chuyển hướng đến trang đăng nhập...",
-    })
+    });
     setTimeout(() => {
-      router.push("/admin/login")
-    }, 1000)
-  }
+      router.push("/admin/login");
+    }, 1000);
+  };
 
   if (!isClient) {
-    return null // Avoid rendering on server
+    return null; // Avoid rendering on server
   }
 
   return (
@@ -123,7 +138,11 @@ export default function AdminDashboard() {
             </div>
           </div>
           <div className="ml-auto flex items-center space-x-4">
-            <Button variant="ghost" className="md:hidden" onClick={handleLogout}>
+            <Button
+              variant="ghost"
+              className="md:hidden"
+              onClick={handleLogout}
+            >
               <LogOut className="h-5 w-5" />
             </Button>
             <div className="hidden items-center space-x-2 md:flex">
@@ -151,38 +170,54 @@ export default function AdminDashboard() {
           <div className="mt-6 grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-4">
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Tổng số học viên</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Tổng số học viên
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">1,234</div>
-                <p className="text-xs text-muted-foreground">+12% so với tháng trước</p>
+                <p className="text-xs text-muted-foreground">
+                  +12% so với tháng trước
+                </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Lớp học đang hoạt động</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Lớp học đang hoạt động
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">42</div>
-                <p className="text-xs text-muted-foreground">+3 lớp so với tháng trước</p>
+                <p className="text-xs text-muted-foreground">
+                  +3 lớp so với tháng trước
+                </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Yêu cầu tư vấn mới</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Yêu cầu tư vấn mới
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">18</div>
-                <p className="text-xs text-muted-foreground">5 yêu cầu chưa xử lý</p>
+                <p className="text-xs text-muted-foreground">
+                  5 yêu cầu chưa xử lý
+                </p>
               </CardContent>
             </Card>
             <Card>
               <CardHeader className="pb-2">
-                <CardTitle className="text-sm font-medium">Hồ sơ ứng tuyển</CardTitle>
+                <CardTitle className="text-sm font-medium">
+                  Hồ sơ ứng tuyển
+                </CardTitle>
               </CardHeader>
               <CardContent>
                 <div className="text-2xl font-bold">7</div>
-                <p className="text-xs text-muted-foreground">3 hồ sơ mới trong tuần này</p>
+                <p className="text-xs text-muted-foreground">
+                  3 hồ sơ mới trong tuần này
+                </p>
               </CardContent>
             </Card>
           </div>
@@ -198,7 +233,9 @@ export default function AdminDashboard() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Liên hệ gần đây</CardTitle>
-                    <CardDescription>Danh sách các yêu cầu tư vấn gần đây từ khách hàng</CardDescription>
+                    <CardDescription>
+                      Danh sách các yêu cầu tư vấn gần đây từ khách hàng
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
@@ -209,10 +246,16 @@ export default function AdminDashboard() {
                         >
                           <div>
                             <div className="font-medium">{contact.name}</div>
-                            <div className="text-sm text-muted-foreground">{contact.email}</div>
-                            <div className="mt-1 text-sm">{contact.message}</div>
+                            <div className="text-sm text-muted-foreground">
+                              {contact.email}
+                            </div>
+                            <div className="mt-1 text-sm">
+                              {contact.message}
+                            </div>
                           </div>
-                          <div className="text-sm text-muted-foreground">{contact.date}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {contact.date}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -223,7 +266,9 @@ export default function AdminDashboard() {
                 <Card>
                   <CardHeader>
                     <CardTitle>Bài viết gần đây</CardTitle>
-                    <CardDescription>Danh sách các bài viết gần đây đã được đăng</CardDescription>
+                    <CardDescription>
+                      Danh sách các bài viết gần đây đã được đăng
+                    </CardDescription>
                   </CardHeader>
                   <CardContent>
                     <div className="space-y-4">
@@ -234,9 +279,13 @@ export default function AdminDashboard() {
                         >
                           <div>
                             <div className="font-medium">{post.title}</div>
-                            <div className="text-sm text-muted-foreground">Tác giả: {post.author}</div>
+                            <div className="text-sm text-muted-foreground">
+                              Tác giả: {post.author}
+                            </div>
                           </div>
-                          <div className="text-sm text-muted-foreground">{post.date}</div>
+                          <div className="text-sm text-muted-foreground">
+                            {post.date}
+                          </div>
                         </div>
                       ))}
                     </div>
@@ -249,11 +298,11 @@ export default function AdminDashboard() {
       </div>
       <Toaster />
     </div>
-  )
+  );
 }
 
 // Missing import for Menu
-import { Menu } from "lucide-react"
+import { Menu } from "lucide-react";
 
 // Sample data for recent contacts
 const recentContacts = [
@@ -281,7 +330,7 @@ const recentContacts = [
     message: "Tôi muốn đăng ký cho con gái tham gia lớp kỹ năng công dân số",
     date: "Hôm qua, 14:20",
   },
-]
+];
 
 // Sample data for recent posts
 const recentPosts = [
@@ -305,4 +354,4 @@ const recentPosts = [
     author: "Admin",
     date: "18/03/2023",
   },
-]
+];

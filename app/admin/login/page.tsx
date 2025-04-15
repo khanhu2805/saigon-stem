@@ -1,18 +1,32 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Lock, User } from "lucide-react"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Lock, User } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { toast } from "@/components/ui/use-toast"
-import { Toaster } from "@/components/ui/toaster"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { toast } from "@/components/ui/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 const formSchema = z.object({
   username: z.string().min(1, {
@@ -21,11 +35,11 @@ const formSchema = z.object({
   password: z.string().min(1, {
     message: "Vui lòng nhập mật khẩu.",
   }),
-})
+});
 
 export default function LoginPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const router = useRouter()
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const router = useRouter();
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -33,10 +47,10 @@ export default function LoginPage() {
       username: "",
       password: "",
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
@@ -45,24 +59,24 @@ export default function LoginPage() {
         toast({
           title: "Đăng nhập thành công!",
           description: "Chuyển hướng đến trang quản trị...",
-        })
+        });
 
         // Simulate storing token
-        localStorage.setItem("adminToken", "demo-token")
+        localStorage.setItem("adminToken", "demo-token");
 
         // Redirect to admin dashboard
         setTimeout(() => {
-          router.push("/admin/dashboard")
-        }, 1000)
+          router.push("/admin/dashboard");
+        }, 1000);
       } else {
         toast({
           title: "Đăng nhập thất bại!",
           description: "Tên đăng nhập hoặc mật khẩu không chính xác.",
           variant: "destructive",
-        })
-        setIsSubmitting(false)
+        });
+        setIsSubmitting(false);
       }
-    }, 1000)
+    }, 1000);
   }
 
   return (
@@ -74,8 +88,12 @@ export default function LoginPage() {
               SG
             </div>
           </div>
-          <CardTitle className="text-2xl text-center font-bold">Đăng nhập</CardTitle>
-          <CardDescription className="text-center">Đăng nhập vào hệ thống quản trị</CardDescription>
+          <CardTitle className="text-2xl text-center font-bold">
+            Đăng nhập
+          </CardTitle>
+          <CardDescription className="text-center">
+            Đăng nhập vào hệ thống quản trị
+          </CardDescription>
         </CardHeader>
         <CardContent>
           <Form {...form}>
@@ -89,7 +107,11 @@ export default function LoginPage() {
                     <FormControl>
                       <div className="relative">
                         <User className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                        <Input placeholder="Nhập tên đăng nhập" className="pl-10" {...field} />
+                        <Input
+                          placeholder="Nhập tên đăng nhập"
+                          className="pl-10"
+                          {...field}
+                        />
                       </div>
                     </FormControl>
                     <FormMessage />
@@ -105,24 +127,35 @@ export default function LoginPage() {
                     <FormControl>
                       <div className="relative">
                         <Lock className="absolute left-3 top-3 h-4 w-4 text-muted-foreground" />
-                        <Input type="password" placeholder="Nhập mật khẩu" className="pl-10" {...field} />
+                        <Input
+                          type="password"
+                          placeholder="Nhập mật khẩu"
+                          className="pl-10"
+                          {...field}
+                        />
                       </div>
                     </FormControl>
                     <FormMessage />
                   </FormItem>
                 )}
               />
-              <Button type="submit" className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90" disabled={isSubmitting}>
+              <Button
+                type="submit"
+                className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90"
+                disabled={isSubmitting}
+              >
                 {isSubmitting ? "Đang đăng nhập..." : "Đăng nhập"}
               </Button>
             </form>
           </Form>
         </CardContent>
         <CardFooter className="flex justify-center">
-          <p className="text-sm text-muted-foreground">Quên mật khẩu? Vui lòng liên hệ với quản trị viên.</p>
+          <p className="text-sm text-muted-foreground">
+            Quên mật khẩu? Vui lòng liên hệ với quản trị viên.
+          </p>
         </CardFooter>
       </Card>
       <Toaster />
     </div>
-  )
+  );
 }

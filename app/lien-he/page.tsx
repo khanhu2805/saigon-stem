@@ -1,17 +1,24 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { Clock, Mail, MapPin, Phone } from "lucide-react"
+import { useState } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Clock, Mail, MapPin, Phone } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/components/ui/use-toast"
-import { Toaster } from "@/components/ui/toaster"
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -29,10 +36,10 @@ const formSchema = z.object({
   message: z.string().min(10, {
     message: "Vui lòng nhập nội dung (tối thiểu 10 ký tự).",
   }),
-})
+});
 
 export default function ContactPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -43,21 +50,21 @@ export default function ContactPage() {
       subject: "",
       message: "",
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      console.log(values)
-      setIsSubmitting(false)
-      form.reset()
+      console.log(values);
+      setIsSubmitting(false);
+      form.reset();
       toast({
         title: "Gửi thông tin thành công!",
         description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
-      })
-    }, 1000)
+      });
+    }, 1000);
   }
 
   return (
@@ -66,8 +73,12 @@ export default function ContactPage() {
       <section className="relative h-[300px] w-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#024AAE]/80 to-[#40C262]/60 z-10"></div>
         <div className="container relative z-20 flex h-full flex-col items-center justify-center text-center text-white">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">Liên hệ</h1>
-          <p className="max-w-2xl text-lg">Liên hệ với chúng tôi để được tư vấn và hỗ trợ</p>
+          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+            Liên hệ
+          </h1>
+          <p className="max-w-2xl text-lg">
+            Liên hệ với chúng tôi để được tư vấn và hỗ trợ
+          </p>
         </div>
       </section>
 
@@ -76,7 +87,9 @@ export default function ContactPage() {
         <div className="container">
           <div className="grid grid-cols-1 gap-12 lg:grid-cols-2">
             <div>
-              <h2 className="mb-6 text-2xl font-bold text-[#024AAE]">Thông tin liên hệ</h2>
+              <h2 className="mb-6 text-2xl font-bold text-[#024AAE]">
+                Thông tin liên hệ
+              </h2>
 
               <div className="mb-8 space-y-6">
                 <div className="flex items-start space-x-4">
@@ -85,7 +98,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="mb-2 font-semibold">Địa chỉ</h3>
-                    <p className="text-muted-foreground">123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh</p>
+                    <p className="text-muted-foreground">
+                      123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh
+                    </p>
                   </div>
                 </div>
 
@@ -105,7 +120,9 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="mb-2 font-semibold">Email</h3>
-                    <p className="text-muted-foreground">info@giaoduc-saigon.vn</p>
+                    <p className="text-muted-foreground">
+                      info@giaoduc-saigon.vn
+                    </p>
                   </div>
                 </div>
 
@@ -115,8 +132,12 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="mb-2 font-semibold">Giờ làm việc</h3>
-                    <p className="text-muted-foreground">Thứ Hai - Thứ Sáu: 8:00 - 17:30</p>
-                    <p className="text-muted-foreground">Thứ Bảy: 8:00 - 12:00</p>
+                    <p className="text-muted-foreground">
+                      Thứ Hai - Thứ Sáu: 8:00 - 17:30
+                    </p>
+                    <p className="text-muted-foreground">
+                      Thứ Bảy: 8:00 - 12:00
+                    </p>
                     <p className="text-muted-foreground">Chủ Nhật: Nghỉ</p>
                   </div>
                 </div>
@@ -136,11 +157,16 @@ export default function ContactPage() {
             </div>
 
             <div>
-              <h2 className="mb-6 text-2xl font-bold text-[#024AAE]">Gửi tin nhắn cho chúng tôi</h2>
+              <h2 className="mb-6 text-2xl font-bold text-[#024AAE]">
+                Gửi tin nhắn cho chúng tôi
+              </h2>
 
               <div className="rounded-lg border p-6 shadow-sm">
                 <Form {...form}>
-                  <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                  <form
+                    onSubmit={form.handleSubmit(onSubmit)}
+                    className="space-y-6"
+                  >
                     <FormField
                       control={form.control}
                       name="name"
@@ -148,7 +174,10 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Họ và tên</FormLabel>
                           <FormControl>
-                            <Input placeholder="Nhập họ và tên của bạn" {...field} />
+                            <Input
+                              placeholder="Nhập họ và tên của bạn"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
@@ -163,7 +192,10 @@ export default function ContactPage() {
                           <FormItem>
                             <FormLabel>Email</FormLabel>
                             <FormControl>
-                              <Input placeholder="Nhập địa chỉ email" {...field} />
+                              <Input
+                                placeholder="Nhập địa chỉ email"
+                                {...field}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -177,7 +209,10 @@ export default function ContactPage() {
                           <FormItem>
                             <FormLabel>Số điện thoại</FormLabel>
                             <FormControl>
-                              <Input placeholder="Nhập số điện thoại" {...field} />
+                              <Input
+                                placeholder="Nhập số điện thoại"
+                                {...field}
+                              />
                             </FormControl>
                             <FormMessage />
                           </FormItem>
@@ -206,14 +241,22 @@ export default function ContactPage() {
                         <FormItem>
                           <FormLabel>Nội dung</FormLabel>
                           <FormControl>
-                            <Textarea placeholder="Nhập nội dung tin nhắn" className="min-h-[150px]" {...field} />
+                            <Textarea
+                              placeholder="Nhập nội dung tin nhắn"
+                              className="min-h-[150px]"
+                              {...field}
+                            />
                           </FormControl>
                           <FormMessage />
                         </FormItem>
                       )}
                     />
 
-                    <Button type="submit" className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90" disabled={isSubmitting}>
+                    <Button
+                      type="submit"
+                      className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90"
+                      disabled={isSubmitting}
+                    >
                       {isSubmitting ? "Đang gửi..." : "Gửi tin nhắn"}
                     </Button>
                   </form>
@@ -225,5 +268,5 @@ export default function ContactPage() {
       </section>
       <Toaster />
     </main>
-  )
+  );
 }

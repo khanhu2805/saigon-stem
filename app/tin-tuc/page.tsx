@@ -1,10 +1,16 @@
-import Image from "next/image"
-import Link from "next/link"
-import { ArrowRight, Calendar, User } from "lucide-react"
+import Image from "next/image";
+import Link from "next/link";
+import { ArrowRight, Calendar, User } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 export default function NewsPage() {
   return (
@@ -20,9 +26,12 @@ export default function NewsPage() {
           priority
         />
         <div className="container relative z-20 flex h-full flex-col items-center justify-center text-center text-white">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">Tin tức & Sự kiện</h1>
+          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+            Tin tức & Sự kiện
+          </h1>
           <p className="max-w-2xl text-lg">
-            Cập nhật những tin tức mới nhất về hoạt động của công ty và các sự kiện sắp diễn ra
+            Cập nhật những tin tức mới nhất về hoạt động của công ty và các sự
+            kiện sắp diễn ra
           </p>
         </div>
       </section>
@@ -32,16 +41,28 @@ export default function NewsPage() {
         <div className="container">
           <Tabs defaultValue="all" className="w-full">
             <TabsList className="mb-8 grid w-full grid-cols-4">
-              <TabsTrigger value="all" className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white">
+              <TabsTrigger
+                value="all"
+                className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white"
+              >
                 Tất cả
               </TabsTrigger>
-              <TabsTrigger value="news" className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white">
+              <TabsTrigger
+                value="news"
+                className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white"
+              >
                 Tin giáo dục
               </TabsTrigger>
-              <TabsTrigger value="events" className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white">
+              <TabsTrigger
+                value="events"
+                className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white"
+              >
                 Sự kiện
               </TabsTrigger>
-              <TabsTrigger value="stories" className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white">
+              <TabsTrigger
+                value="stories"
+                className="data-[state=active]:bg-[#024AAE] data-[state=active]:text-white"
+              >
                 Câu chuyện học viên
               </TabsTrigger>
             </TabsList>
@@ -51,7 +72,12 @@ export default function NewsPage() {
                 {allNews.map((news, index) => (
                   <Card key={index} className="overflow-hidden">
                     <div className="relative h-48 w-full">
-                      <Image src={news.image || "/placeholder.svg"} alt={news.title} fill className="object-cover" />
+                      <Image
+                        src={news.image || "/placeholder.svg"}
+                        alt={news.title}
+                        fill
+                        className="object-cover"
+                      />
                       <div className="absolute top-0 right-0 bg-[#024AAE] px-3 py-1 text-sm font-medium text-white">
                         {news.category}
                       </div>
@@ -67,14 +93,19 @@ export default function NewsPage() {
                           {news.author}
                         </div>
                       </div>
-                      <CardTitle className="line-clamp-2">{news.title}</CardTitle>
+                      <CardTitle className="line-clamp-2">
+                        {news.title}
+                      </CardTitle>
                     </CardHeader>
                     <CardContent>
                       <p className="line-clamp-3">{news.excerpt}</p>
                     </CardContent>
                     <CardFooter>
                       <Link href={`/tin-tuc/${news.slug}`} className="w-full">
-                        <Button variant="ghost" className="w-full text-[#024AAE] hover:bg-[#024AAE]/10">
+                        <Button
+                          variant="ghost"
+                          className="w-full text-[#024AAE] hover:bg-[#024AAE]/10"
+                        >
                           Đọc tiếp
                           <ArrowRight className="ml-2 h-4 w-4" />
                         </Button>
@@ -92,7 +123,12 @@ export default function NewsPage() {
                   .map((news, index) => (
                     <Card key={index} className="overflow-hidden">
                       <div className="relative h-48 w-full">
-                        <Image src={news.image || "/placeholder.svg"} alt={news.title} fill className="object-cover" />
+                        <Image
+                          src={news.image || "/placeholder.svg"}
+                          alt={news.title}
+                          fill
+                          className="object-cover"
+                        />
                         <div className="absolute top-0 right-0 bg-[#024AAE] px-3 py-1 text-sm font-medium text-white">
                           {news.category}
                         </div>
@@ -108,14 +144,19 @@ export default function NewsPage() {
                             {news.author}
                           </div>
                         </div>
-                        <CardTitle className="line-clamp-2">{news.title}</CardTitle>
+                        <CardTitle className="line-clamp-2">
+                          {news.title}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <p className="line-clamp-3">{news.excerpt}</p>
                       </CardContent>
                       <CardFooter>
                         <Link href={`/tin-tuc/${news.slug}`} className="w-full">
-                          <Button variant="ghost" className="w-full text-[#024AAE] hover:bg-[#024AAE]/10">
+                          <Button
+                            variant="ghost"
+                            className="w-full text-[#024AAE] hover:bg-[#024AAE]/10"
+                          >
                             Đọc tiếp
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
@@ -133,7 +174,12 @@ export default function NewsPage() {
                   .map((news, index) => (
                     <Card key={index} className="overflow-hidden">
                       <div className="relative h-48 w-full">
-                        <Image src={news.image || "/placeholder.svg"} alt={news.title} fill className="object-cover" />
+                        <Image
+                          src={news.image || "/placeholder.svg"}
+                          alt={news.title}
+                          fill
+                          className="object-cover"
+                        />
                         <div className="absolute top-0 right-0 bg-[#024AAE] px-3 py-1 text-sm font-medium text-white">
                           {news.category}
                         </div>
@@ -149,14 +195,19 @@ export default function NewsPage() {
                             {news.author}
                           </div>
                         </div>
-                        <CardTitle className="line-clamp-2">{news.title}</CardTitle>
+                        <CardTitle className="line-clamp-2">
+                          {news.title}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <p className="line-clamp-3">{news.excerpt}</p>
                       </CardContent>
                       <CardFooter>
                         <Link href={`/tin-tuc/${news.slug}`} className="w-full">
-                          <Button variant="ghost" className="w-full text-[#024AAE] hover:bg-[#024AAE]/10">
+                          <Button
+                            variant="ghost"
+                            className="w-full text-[#024AAE] hover:bg-[#024AAE]/10"
+                          >
                             Đọc tiếp
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
@@ -174,7 +225,12 @@ export default function NewsPage() {
                   .map((news, index) => (
                     <Card key={index} className="overflow-hidden">
                       <div className="relative h-48 w-full">
-                        <Image src={news.image || "/placeholder.svg"} alt={news.title} fill className="object-cover" />
+                        <Image
+                          src={news.image || "/placeholder.svg"}
+                          alt={news.title}
+                          fill
+                          className="object-cover"
+                        />
                         <div className="absolute top-0 right-0 bg-[#024AAE] px-3 py-1 text-sm font-medium text-white">
                           {news.category}
                         </div>
@@ -190,14 +246,19 @@ export default function NewsPage() {
                             {news.author}
                           </div>
                         </div>
-                        <CardTitle className="line-clamp-2">{news.title}</CardTitle>
+                        <CardTitle className="line-clamp-2">
+                          {news.title}
+                        </CardTitle>
                       </CardHeader>
                       <CardContent>
                         <p className="line-clamp-3">{news.excerpt}</p>
                       </CardContent>
                       <CardFooter>
                         <Link href={`/tin-tuc/${news.slug}`} className="w-full">
-                          <Button variant="ghost" className="w-full text-[#024AAE] hover:bg-[#024AAE]/10">
+                          <Button
+                            variant="ghost"
+                            className="w-full text-[#024AAE] hover:bg-[#024AAE]/10"
+                          >
                             Đọc tiếp
                             <ArrowRight className="ml-2 h-4 w-4" />
                           </Button>
@@ -227,7 +288,7 @@ export default function NewsPage() {
         </div>
       </section>
     </main>
-  )
+  );
 }
 
 // Sample data for news
@@ -292,4 +353,4 @@ const allNews = [
       "Câu chuyện về hành trình nỗ lực và chinh phục giải thưởng Robotics của nhóm học sinh lớp 7 tại Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn.",
     image: "/placeholder.svg?height=200&width=400",
   },
-]
+];

@@ -6,35 +6,39 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import FadeInSection from "@/components/ui/fade-in-section";
 import ConsultationForm from "@/components/consultation-form";
 import { useEffect, useState } from "react";
+import Slideshow from "@/components/ui/slide-show";
+import HexagonalImageGrid from "@/components/ui/image-grid";
+import CountUp from "@/components/ui/count-up";
 
 const slides = [
   {
     type: "video",
-    src: "/placeholder-video.mp4", // Replace with actual video URL
+    src: "/video.mp4", // Replace with actual video URL
     alt: "Students building robots",
-    title: "Khám phá Robotics",
-    description: "Đào tạo thế hệ trẻ với công nghệ tiên tiến.",
+    title: "NGÀY HỘI STEM THÀNH PHỐ BIÊN HÒA, TỈNH ĐỒNG NAI",
+    description: "",
   },
   {
     type: "image",
-    src: "/placeholder.svg?height=1200&width=1920",
+    src: "/banner-2.jpg",
     alt: "STEM project showcase",
-    title: "Sáng tạo với STEM",
-    description: "Khơi dậy tư duy qua các dự án thực tiễn.",
+    title: "LỄ KÝ KẾT BIÊN BẢN GHI NHỚ HỢP TÁC",
+    description: "",
   },
   {
     type: "image",
-    src: "/placeholder.svg?height=1200&width=1920",
+    src: "/banner-3.jpg",
     alt: "Coding workshop",
-    title: "Công nghệ dẫn đầu",
-    description: "Phát triển kỹ năng lập trình cho tương lai.",
+    title: "NGÀY HỘI STEM CẤP TIỂU HỌC THÀNH PHỐ THỦ ĐỨC",
+    description: "",
   },
   {
     type: "image",
-    src: "/placeholder.svg?height=1200&width=1920",
+    src: "/banner-4.jpg",
     alt: "Digital citizenship seminar",
-    title: "Kỹ năng công dân số",
-    description: "Hướng dẫn an toàn và đạo đức trong thế giới số.",
+    title:
+      "NGÀY HỘI TRẢI NGHIỆM TẠI TRƯỜNG TIỂU HỌC NGUYỄN AN NINH, TP. BIÊN HOÀ",
+    description: "",
   },
 ];
 
@@ -42,42 +46,16 @@ export default function Home() {
   return (
     <main className="flex min-h-screen flex-col">
       {/* Hero Section */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-[#024AAE]/70 to-[#40C262]/50 z-10"></div>
-        <Image
-          src="/placeholder.svg?height=1200&width=1920"
-          alt="Students innovating in STEM"
-          fill
-          className="object-cover transform transition-transform duration-1000 hover:scale-105"
-          priority
-        />
-        <div className="container relative z-20 flex h-full items-center">
-          <div className="max-w-2xl">
-            <h1 className="text-5xl font-bold text-white tracking-tight md:text-6xl">
-              Kiến tạo tương lai qua giáo dục sáng tạo
-            </h1>
-            <p className="mt-4 text-xl text-white/90">
-              Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn – Tiên phong trong
-              STEM, Robotics và kỹ năng công dân số.
-            </p>
-            <Link href="/lien-he">
-              <Button
-                size="lg"
-                className="mt-6 bg-[#40C262] hover:bg-[#024AAE] text-white text-base"
-              >
-                Kết nối với chúng tôi
-              </Button>
-            </Link>
-          </div>
-        </div>
+      <section className="relative h-[80vh] w-full overflow-hidden">
+        <Slideshow slides={slides} />
       </section>
 
       {/* Introduction Section */}
       <section className="py-20 bg-white">
-        <div className="container">
-          <div className="grid grid-cols-1 lg:grid-cols-5 gap-12 items-center">
-            <div className="lg:col-span-3">
-              <FadeInSection vertical={true} yOffset={20} delay={0.2}>
+        <div className="mx-20">
+          <div className="grid grid-cols-1 lg:grid-cols-10 gap-10 items-center">
+            <div className="lg:col-span-5">
+              <FadeInSection vertical={false} xOffset={-30} delay={0.3}>
                 <h2 className="text-4xl font-bold text-[#024AAE] mb-6">
                   Chúng tôi là ai?
                 </h2>
@@ -87,7 +65,7 @@ export default function Home() {
                   công dân số và kỹ năng sống, giúp thế hệ trẻ sẵn sàng cho kỷ
                   nguyên số.
                 </p>
-                <div className="mt-8 flex space-x-4">
+                <div className="mt-8 flex">
                   <Link href="/gioi-thieu">
                     <Button
                       variant="outline"
@@ -99,15 +77,33 @@ export default function Home() {
                 </div>
               </FadeInSection>
             </div>
-            <div className="lg:col-span-2 relative">
-              <FadeInSection vertical={true} yOffset={20} delay={0.4}>
-                <div className="relative w-full h-96">
-                  <Image
-                    src="/placeholder.svg?height=600&width=800"
-                    alt="Team collaborating"
-                    fill
-                    className="object-cover rounded-lg shadow-lg"
-                  />
+            <div className="lg:col-span-5 relative">
+              <FadeInSection vertical={false} xOffset={30} delay={0.3}>
+                <div className="flex space-x-4">
+                  <div className="relative lg:col-span-1 w-full h-96">
+                    <Image
+                      src="/pic2.jpg"
+                      alt="Team collaborating"
+                      fill
+                      className="object-cover rounded-lg shadow-lg"
+                    />
+                  </div>
+                  <div className="relative lg:col-span-1 mt-20 w-full h-96">
+                    <Image
+                      src="/pic1.jpg"
+                      alt="Team collaborating"
+                      fill
+                      className="object-cover rounded-lg shadow-lg"
+                    />
+                  </div>
+                  <div className="relative lg:col-span-1 w-full h-96">
+                    <Image
+                      src="/pic3.jpg"
+                      alt="Team collaborating"
+                      fill
+                      className="object-cover rounded-lg shadow-lg"
+                    />
+                </div>
                 </div>
               </FadeInSection>
             </div>
@@ -158,7 +154,7 @@ export default function Home() {
                     <p className="text-muted-foreground">{service.desc}</p>
                   </CardContent>
                   <div className="p-6">
-                    <Link href="/chuong-trinh-dao-tao">
+                    <Link hidden href="/chuong-trinh-dao-tao">
                       <Button
                         variant="ghost"
                         className="group-hover:text-[#024AAE]"
@@ -176,36 +172,39 @@ export default function Home() {
 
       {/* Impact Section */}
       <section className="py-20 bg-[#024AAE] text-white">
-        <div className="container">
+      <div className="container">
+        <FadeInSection vertical={true} yOffset={20} delay={0.2}>
           <h2 className="text-4xl font-bold text-center mb-12">
             Thành tựu của chúng tôi
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8 text-center">
-            {[
-              { value: "10+", label: "Năm hoạt động" },
-              { value: "5000+", label: "Học sinh đào tạo" },
-              { value: "50+", label: "Giải thưởng quốc tế" },
-              { value: "100+", label: "Đối tác giáo dục" },
-            ].map((stat, index) => (
-              <FadeInSection
-                key={index}
-                vertical={true}
-                yOffset={20}
-                delay={0.2 * index}
-              >
-                <div>
-                  <p className="text-5xl font-bold">{stat.value}</p>
-                  <p className="mt-2 text-lg">{stat.label}</p>
-                </div>
-              </FadeInSection>
-            ))}
-          </div>
+        </FadeInSection>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+          {[
+            { value: 5000, suffix: "+", label: "Học sinh đào tạo" },
+            { value: 300, suffix: "+", label: "Ngôi trường đã giảng dạy" },
+            { value: 100, suffix: "+", label: "Hội thảo báo cáo" },
+          ].map((stat, index) => (
+            <FadeInSection
+              key={index}
+              vertical={true}
+              yOffset={20}
+              delay={0.2 * index}
+            >
+              <div>
+                <p className="text-5xl font-bold">
+                  <CountUp end={stat.value} duration={1500} suffix={stat.suffix} />
+                </p>
+                <p className="mt-2 text-lg">{stat.label}</p>
+              </div>
+            </FadeInSection>
+          ))}
         </div>
-      </section>
+      </div>
+    </section>
 
       {/* Call to Action */}
       <section className="py-20 bg-white">
-        <div className="container">
+        <div className="mx-20">
           <div className="relative bg-[#40C262] rounded-lg p-12 text-white overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -translate-y-24 translate-x-24"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">

@@ -1,14 +1,21 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import Image from "next/image"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-import { ArrowRight, Calendar, MapPin } from "lucide-react"
+import { useState } from "react";
+import Image from "next/image";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { ArrowRight, Calendar, MapPin } from "lucide-react";
 
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button";
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card";
 import {
   Dialog,
   DialogContent,
@@ -16,12 +23,19 @@ import {
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/components/ui/use-toast"
-import { Toaster } from "@/components/ui/toaster"
+} from "@/components/ui/dialog";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/components/ui/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -42,11 +56,11 @@ const formSchema = z.object({
   cv: z.any().refine((file) => file?.length === 1, {
     message: "Vui lòng tải lên CV của bạn.",
   }),
-})
+});
 
 export default function RecruitmentPage() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [selectedPosition, setSelectedPosition] = useState("")
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [selectedPosition, setSelectedPosition] = useState("");
 
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
@@ -57,21 +71,21 @@ export default function RecruitmentPage() {
       position: "",
       message: "",
     },
-  })
+  });
 
   function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
+    setIsSubmitting(true);
 
     // Simulate API call
     setTimeout(() => {
-      console.log(values)
-      setIsSubmitting(false)
-      form.reset()
+      console.log(values);
+      setIsSubmitting(false);
+      form.reset();
       toast({
         title: "Gửi hồ sơ thành công!",
         description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
-      })
-    }, 1000)
+      });
+    }, 1000);
   }
 
   return (
@@ -79,11 +93,20 @@ export default function RecruitmentPage() {
       {/* Hero Section */}
       <section className="relative h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-r from-[#024AAE]/80 to-[#40C262]/60 z-10"></div>
-        <Image src="/placeholder.svg?height=800&width=1600" alt="Tuyển dụng" fill className="object-cover" priority />
+        <Image
+          src="/placeholder.svg?height=800&width=1600"
+          alt="Tuyển dụng"
+          fill
+          className="object-cover"
+          priority
+        />
         <div className="container relative z-20 flex h-full flex-col items-center justify-center text-center text-white">
-          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">Tuyển dụng</h1>
+          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
+            Tuyển dụng
+          </h1>
           <p className="max-w-2xl text-lg">
-            Tham gia đội ngũ của chúng tôi và cùng nhau tạo nên những giá trị giáo dục tích cực
+            Tham gia đội ngũ của chúng tôi và cùng nhau tạo nên những giá trị
+            giáo dục tích cực
           </p>
         </div>
       </section>
@@ -92,10 +115,13 @@ export default function RecruitmentPage() {
       <section className="py-16 bg-white">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-[#024AAE]">Tại sao nên gia nhập đội ngũ của chúng tôi?</h2>
+            <h2 className="mb-4 text-3xl font-bold text-[#024AAE]">
+              Tại sao nên gia nhập đội ngũ của chúng tôi?
+            </h2>
             <p className="mx-auto max-w-3xl text-muted-foreground">
-              Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn là nơi làm việc lý tưởng cho những người đam mê giáo dục
-              và mong muốn tạo ra những thay đổi tích cực cho thế hệ trẻ
+              Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn là nơi làm việc lý
+              tưởng cho những người đam mê giáo dục và mong muốn tạo ra những
+              thay đổi tích cực cho thế hệ trẻ
             </p>
           </div>
 
@@ -123,8 +149,8 @@ export default function RecruitmentPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p>
-                  Cơ hội học hỏi và phát triển chuyên môn thông qua các khóa đào tạo, hội thảo và làm việc với các
-                  chuyên gia hàng đầu.
+                  Cơ hội học hỏi và phát triển chuyên môn thông qua các khóa đào
+                  tạo, hội thảo và làm việc với các chuyên gia hàng đầu.
                 </p>
               </CardContent>
             </Card>
@@ -154,7 +180,8 @@ export default function RecruitmentPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p>
-                  Môi trường làm việc năng động, sáng tạo và thân thiện, nơi mọi ý kiến đều được tôn trọng và lắng nghe.
+                  Môi trường làm việc năng động, sáng tạo và thân thiện, nơi mọi
+                  ý kiến đều được tôn trọng và lắng nghe.
                 </p>
               </CardContent>
             </Card>
@@ -182,8 +209,8 @@ export default function RecruitmentPage() {
               </CardHeader>
               <CardContent className="text-center">
                 <p>
-                  Chính sách đánh giá công bằng và cơ hội thăng tiến rõ ràng dựa trên năng lực và đóng góp của mỗi cá
-                  nhân.
+                  Chính sách đánh giá công bằng và cơ hội thăng tiến rõ ràng dựa
+                  trên năng lực và đóng góp của mỗi cá nhân.
                 </p>
               </CardContent>
             </Card>
@@ -195,9 +222,12 @@ export default function RecruitmentPage() {
       <section className="py-16 bg-gray-50">
         <div className="container">
           <div className="mb-12 text-center">
-            <h2 className="mb-4 text-3xl font-bold text-[#024AAE]">Vị trí đang tuyển dụng</h2>
+            <h2 className="mb-4 text-3xl font-bold text-[#024AAE]">
+              Vị trí đang tuyển dụng
+            </h2>
             <p className="mx-auto max-w-3xl text-muted-foreground">
-              Khám phá các vị trí đang tuyển dụng và tìm kiếm cơ hội phù hợp với bạn
+              Khám phá các vị trí đang tuyển dụng và tìm kiếm cơ hội phù hợp với
+              bạn
             </p>
           </div>
 
@@ -243,11 +273,18 @@ export default function RecruitmentPage() {
                     </DialogTrigger>
                     <DialogContent className="sm:max-w-[600px]">
                       <DialogHeader>
-                        <DialogTitle>Ứng tuyển vị trí {selectedPosition}</DialogTitle>
-                        <DialogDescription>Vui lòng điền đầy đủ thông tin bên dưới để ứng tuyển.</DialogDescription>
+                        <DialogTitle>
+                          Ứng tuyển vị trí {selectedPosition}
+                        </DialogTitle>
+                        <DialogDescription>
+                          Vui lòng điền đầy đủ thông tin bên dưới để ứng tuyển.
+                        </DialogDescription>
                       </DialogHeader>
                       <Form {...form}>
-                        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+                        <form
+                          onSubmit={form.handleSubmit(onSubmit)}
+                          className="space-y-6"
+                        >
                           <FormField
                             control={form.control}
                             name="name"
@@ -255,7 +292,10 @@ export default function RecruitmentPage() {
                               <FormItem>
                                 <FormLabel>Họ và tên</FormLabel>
                                 <FormControl>
-                                  <Input placeholder="Nhập họ và tên của bạn" {...field} />
+                                  <Input
+                                    placeholder="Nhập họ và tên của bạn"
+                                    {...field}
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -270,7 +310,10 @@ export default function RecruitmentPage() {
                                 <FormItem>
                                   <FormLabel>Email</FormLabel>
                                   <FormControl>
-                                    <Input placeholder="Nhập địa chỉ email" {...field} />
+                                    <Input
+                                      placeholder="Nhập địa chỉ email"
+                                      {...field}
+                                    />
                                   </FormControl>
                                   <FormMessage />
                                 </FormItem>
@@ -284,7 +327,10 @@ export default function RecruitmentPage() {
                                 <FormItem>
                                   <FormLabel>Số điện thoại</FormLabel>
                                   <FormControl>
-                                    <Input placeholder="Nhập số điện thoại" {...field} />
+                                    <Input
+                                      placeholder="Nhập số điện thoại"
+                                      {...field}
+                                    />
                                   </FormControl>
                                   <FormMessage />
                                 </FormItem>
@@ -299,7 +345,11 @@ export default function RecruitmentPage() {
                               <FormItem>
                                 <FormLabel>Vị trí ứng tuyển</FormLabel>
                                 <FormControl>
-                                  <Input value={selectedPosition} readOnly {...field} />
+                                  <Input
+                                    value={selectedPosition}
+                                    readOnly
+                                    {...field}
+                                  />
                                 </FormControl>
                                 <FormMessage />
                               </FormItem>
@@ -327,7 +377,9 @@ export default function RecruitmentPage() {
                           <FormField
                             control={form.control}
                             name="cv"
-                            render={({ field: { value, onChange, ...fieldProps } }) => (
+                            render={({
+                              field: { value, onChange, ...fieldProps },
+                            }) => (
                               <FormItem>
                                 <FormLabel>Tải lên CV của bạn</FormLabel>
                                 <FormControl>
@@ -362,7 +414,7 @@ export default function RecruitmentPage() {
       </section>
       <Toaster />
     </main>
-  )
+  );
 }
 
 // Sample data for open positions
@@ -415,4 +467,4 @@ const openPositions = [
       "Chúng tôi đang tìm kiếm trợ giảng có đam mê với giáo dục STEM và Robotics để tham gia đội ngũ của chúng tôi.",
     image: "/placeholder.svg?height=300&width=500",
   },
-]
+];
