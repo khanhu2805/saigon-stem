@@ -52,7 +52,7 @@ export default function Home() {
 
       {/* Introduction Section */}
       <section className="py-20 bg-white">
-        <div className="mx-20">
+        <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-10 gap-10 items-center">
             <div className="lg:col-span-5">
               <FadeInSection vertical={false} xOffset={-30} delay={0.3}>
@@ -204,7 +204,7 @@ export default function Home() {
 
       {/* Call to Action */}
       <section className="py-20 bg-white">
-        <div className="mx-20">
+        <div className="container">
           <div className="relative bg-[#40C262] rounded-lg p-12 text-white overflow-hidden">
             <div className="absolute top-0 right-0 w-48 h-48 bg-white/10 rounded-full -translate-y-24 translate-x-24"></div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
