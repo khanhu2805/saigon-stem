@@ -1,16 +1,22 @@
-"use client"
+"use client";
 
-import { useState } from "react"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { useForm } from "react-hook-form"
-import { z } from "zod"
-
-import { Button } from "@/components/ui/button"
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form"
-import { Input } from "@/components/ui/input"
-import { Textarea } from "@/components/ui/textarea"
-import { toast } from "@/components/ui/use-toast"
-import { Toaster } from "@/components/ui/toaster"
+import { useState, useEffect } from "react";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { useForm } from "react-hook-form";
+import { z } from "zod";
+import { Button } from "@/components/ui/button";
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from "@/components/ui/form";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { toast } from "@/hooks/use-toast";
+import { Toaster } from "@/components/ui/toaster";
 
 const formSchema = z.object({
   name: z.string().min(2, {
@@ -22,43 +28,74 @@ const formSchema = z.object({
   phone: z.string().min(10, {
     message: "Vui lòng nhập số điện thoại hợp lệ.",
   }),
-  message: z.string().min(0, {
-    message: "Vui lòng nhập nội dung cần tư vấn.",
-  }),
-})
+  message: z.string().optional(),
+});
 
 export default function ConsultationForm() {
-  const [isSubmitting, setIsSubmitting] = useState(false)
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm<z.infer<typeof formSchema>>({
-    resolver: zodResolver(formSchema),
+  const form = useForm({
+    // resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
       phone: "",
       message: "",
     },
-  })
+  });
 
-  function onSubmit(values: z.infer<typeof formSchema>) {
-    setIsSubmitting(true)
+  useEffect(() => {
+    console.log("ConsultationForm mounted");
+  }, []);
 
-    // Simulate API call
+  function onSubmit(values) {
+    setIsSubmitting(true);
+    console.log("Submitting form with values:", values);
+
     setTimeout(() => {
-      console.log(values)
-      setIsSubmitting(false)
-      form.reset()
+      try {
+        console.log("Triggering toast...");
+        toast({
+          title: "Gửi thông tin thành công!",
+          description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
+          variant: "default",
+          duration: 5000,
+        });
+        form.reset();
+        console.log("Form reset and toast triggered");
+      } catch (error) {
+        console.error("Toast error:", error);
+        toast({
+          title: "Lỗi!",
+          description: "Không thể gửi thông tin. Vui lòng thử lại.",
+          variant: "destructive",
+          duration: 5000,
+        });
+      } finally {
+        setIsSubmitting(false);
+      }
+    }, 1000);
+  }
+
+  function testToast() {
+    console.log("Testing toast...");
+    try {
       toast({
-        title: "Gửi thông tin thành công!",
-        description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
-      })
-    }, 1000)
+        title: "Kiểm tra Toast",
+        description: "Đây là toast kiểm tra để xác nhận hiển thị.",
+        variant: "default",
+        duration: 5000,
+      });
+      console.log("Test toast triggered");
+    } catch (error) {
+      console.error("Test toast error:", error);
+    }
   }
 
   return (
-    <>
+    <div className="relative">
       <Form {...form}>
-        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6">
+        <form onSubmit={form.handleSubmit(testToast)} className="space-y-6">
           <FormField
             control={form.control}
             name="name"
@@ -105,20 +142,30 @@ export default function ConsultationForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nội dung cần tư vấn</FormLabel>
+                <FormLabel>Nội dung cần tư vấn (không bắt buộc)</FormLabel>
                 <FormControl>
-                  <Textarea placeholder="Nhập nội dung cần tư vấn" className="min-h-[120px]" {...field} />
+                  <Textarea
+                    placeholder="Nhập nội dung cần tư vấn"
+                    className="min-h-[120px]"
+                    {...field}
+                  />
                 </FormControl>
                 <FormMessage />
               </FormItem>
             )}
           />
-          <Button type="submit" className="w-full bg-[#40C262] hover:bg-[#40C262]/90" disabled={isSubmitting}>
-            {isSubmitting ? "Đang gửi..." : "Gửi thông tin"}
-          </Button>
+          <div className="flex items-center justify-center">
+            <Button
+              type="submit"
+              className="w-full sm:w-auto bg-[#40C262] hover:bg-[#40C262]/90"
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? "Đang gửi..." : "Gửi thông tin"}
+            </Button>
+          </div>
         </form>
       </Form>
       <Toaster />
-    </>
-  )
+    </div>
+  );
 }
