@@ -48,7 +48,7 @@ export default function ConsultationForm() {
     console.log("ConsultationForm mounted");
   }, []);
 
-  function onSubmit(values) {
+  function onSubmit(values: any) {
     setIsSubmitting(true);
     console.log("Submitting form with values:", values);
 
@@ -94,8 +94,8 @@ export default function ConsultationForm() {
 
   return (
     <div className="relative">
-      <Form {...form}>
-        <form onSubmit={form.handleSubmit(testToast)} className="space-y-6">
+      <Form {...form} >
+        <form onSubmit={form.handleSubmit(testToast)} className="space-y-6" >
           <FormField
             control={form.control}
             name="name"

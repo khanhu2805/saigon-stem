@@ -12,10 +12,11 @@ import { usePathname } from "next/navigation";
 const navItems = [
   { href: "/", label: "Trang chủ" },
   { href: "/gioi-thieu", label: "Giới thiệu" },
-  { href: "/chuong-trinh-dao-taoss", label: "Chương trình đào tạo" },
-  { href: "/tin-tucss", label: "Tin tức - sự kiện" },
-  { href: "/tuyen-dungs", label: "Tuyển dụng" },
-  { href: "/lien-hes", label: "Liên hệ" },
+  { href: "/chuong-trinh-dao-tao", label: "Chương trình đào tạo" },
+  { href: "/sach", label: "Sách" },
+  { href: "/tin-tuc", label: "Tin tức - sự kiện" },
+  { href: "/tuyen-dung", label: "Tuyển dụng" },
+  { href: "/lien-he", label: "Liên hệ" },
 ];
 
 export default function Header() {
