@@ -1,36 +1,9 @@
 import Image from "next/image";
 import { Award, BookOpen, Target, ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
 import FadeInSection from "@/components/ui/fade-in-section";
 import CountUp from "@/components/ui/count-up";
 
 export default function AboutPage() {
-  const teamMembers = [
-    {
-      name: "Nguyễn Văn A",
-      position: "Giám đốc điều hành",
-      description: "Tiến sĩ Giáo dục, 15 năm kinh nghiệm trong STEM và quản lý.",
-      image: "/images/team-member-a.jpg", // Replace with actual image
-    },
-    {
-      name: "Trần Thị B",
-      position: "Trưởng phòng đào tạo",
-      description: "Thạc sĩ Công nghệ Giáo dục, chuyên gia STEM và Robotics.",
-      image: "/images/team-member-b.jpg", // Replace with actual image
-    },
-    {
-      name: "Lê Văn C",
-      position: "Giáo viên STEM",
-      description: "Kỹ sư Điện tử, 8 năm hướng dẫn STEM và thi kỹ thuật.",
-      image: "/images/team-member-c.jpg", // Replace with actual image
-    },
-    {
-      name: "Phạm Thị D",
-      position: "Giáo viên Robotics",
-      description: "Thạc sĩ Khoa học Máy tính, chuyên lập trình và robot.",
-      image: "/images/team-member-d.jpg", // Replace with actual image
-    },
-  ];
 
   const timelineEvents = [
     { year: 2018, event: "" },
@@ -44,7 +17,7 @@ export default function AboutPage() {
       {/* Hero Section */}
       <section className="relative h-[400px] w-full overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#024AAE]/70 to-[#40C262]/50 z-10"></div>
-        <div className="absolute inset-0 bg-[url('/hexagon-pattern.svg')] opacity-10 z-5"></div>
+
         <Image
           src="/pic5.jpg" // Replace with actual image
           alt="Giới thiệu về công ty"
@@ -179,55 +152,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="py-24 bg-white">
-        <div className="container">
-          <FadeInSection vertical={true} yOffset={20} delay={0.3}>
-            <h2 className="text-4xl font-bold text-center text-[#024AAE] mb-4">
-              Những người dẫn dắt
-            </h2>
-            <p className="mx-auto max-w-3xl text-center text-muted-foreground mb-12">
-              Đội ngũ giáo viên và chuyên gia tận tâm, đang định hình tương lai giáo dục Việt Nam.
-            </p>
-          </FadeInSection>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 max-w-5xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <FadeInSection key={index} vertical={true} yOffset={20} delay={0.3 + index * 0.2}>
-                <div
-                  className="relative w-40 h-52 mx-auto group transition-transform duration-300"
-                >
-                  <Image
-                    src={member.image}
-                    alt={member.name}
-                    fill
-                    className="object-cover group-hover:scale-110 transition-transform duration-300"
-                  />
-                  <div className="absolute inset-0 bg-[#024AAE]/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center text-white p-4">
-                    <h3 className="text-lg font-bold">{member.name}</h3>
-                    <p className="text-sm text-[#40C262]">{member.position}</p>
-                    <p className="text-xs text-center mt-2">{member.description}</p>
-                  </div>
-                  <div
-                    className="absolute inset-0 border-4 border-[#40C262] opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-                    style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)" }}
-                  ></div>
-                </div>
-              </FadeInSection>
-            ))}
-          </div>
-          <FadeInSection vertical={true} yOffset={20} delay={0.5}>
-            <div className="text-center mt-12">
-              <Button
-                asChild
-                size="lg"
-                className="bg-[#024AAE] hover:bg-[#024AAE]/90"
-              >
-                <a href="/tuyen-dung">Tham gia đội ngũ</a>
-              </Button>
-            </div>
-          </FadeInSection>
-        </div>
-      </section>
     </main>
   );
 }

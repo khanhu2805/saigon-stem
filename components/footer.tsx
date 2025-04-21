@@ -12,31 +12,53 @@ import Image from "next/image";
 export default function Footer() {
   return (
     <footer className="bg-[#024AAE] text-white">
-      <div className="container py-12">
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+      <div className="w-full px-14 py-12">
+        <div className="grid grid-cols-1 space-x-8 md:grid-cols-2 lg:grid-cols-4">
           <div>
             <h3 className="mb-4 text-lg font-bold">Về chúng tôi</h3>
-            <div className="flex items-center space-x-2">
-              <Image src={"/logosgs.svg"} alt="LOGO" height={64} width={64} />
-              <span className="font-bold">Giáo dục Sài Gòn</span>
+            <div className="flex items-center space-x-2 mb-8">
+              <Image src={"/logosgs.png"} alt="LOGO" height={64} width={64} />
+              <span className="font-bold">GIÁO DỤC SÀI GÒN</span>
             </div>
-            <p className="mt-4">
-              Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn - Đơn vị tiên
-              phong trong lĩnh vực đào tạo STEM, Robotics và kỹ năng sống cho
+            <span className="font-bold italic">Công ty TNHH Tư vấn và Đào tạo Giáo dục Sài Gòn</span>
+            <p className="mt-3 mb-8">
+              Đơn vị tiên
+              phong trong lĩnh vực đào tạo STEM, Robotics, kỹ năng công dân số và kỹ năng sống cho
+              học sinh các cấp.
+            </p>
+            <span className="font-bold italic">Công ty TNHH Đầu tư và Phát triển Giáo dục Sài Gòn</span>
+            <p className="mt-3">
+            Đơn vị tiên
+              phong trong lĩnh vực đào tạo STEM, Robotics, kỹ năng công dân số và kỹ năng sống cho
               học sinh các cấp.
             </p>
           </div>
 
           <div>
             <h3 className="mb-4 text-lg font-bold">Chi nhánh HCM</h3>
-            <div className="space-y-3">
+            <div className="space-y-3 text-base">
+            <p className="font-bold italic">Quận Gò Vấp</p>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
+                <p>362/4/22 Đường Thống Nhất, Phường 16, Quận Gò Vấp, TP. Hồ Chí Minh</p>
+              </div>
+              <p className="font-bold italic">Quận 12</p>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
+                <p>Số 26 đường TL 19, Khu phố 3B, Phường Thạnh Lộc, Quận 12, TP. Hồ Chí Minh</p>
+              </div>
+              <div className="flex items-start space-x-3">
+                <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
+                <p>Căn nhà số 19, Khu nhà ở CBCNVC Văn phòng B - Nhà khách Tổng Liên đoàn lao động Việt Nam, Đường TL17, Khu phố 3B, Phường Thạnh Lộc, Quận 12, TP. Hồ Chí Minh</p>
+              </div>
+              <p className="font-bold italic">Văn phòng đại diện</p>
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
                 <p>36 Lê Quý Đôn, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>0123456789</p>
+                <p>0908485267</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />
@@ -47,18 +69,18 @@ export default function Footer() {
 
           <div>
             <h3 className="mb-4 text-lg font-bold">Chi nhánh Đồng Nai</h3>
-            <div className="space-y-3">
+            <div className="space-y-3 text-base">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>bla blabla</p>
+                <p>81/70 Khu phố 11, Phường Tân Hòa, Thành phố Biên Hòa, Tỉnh Đồng Nai</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>0123456789</p>
+                <p>0834432761</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>saigonstemhr@gmail.com</p>
+                <p>gdsg.dnai@gmail.com</p>
               </div>
             </div>
           </div>
@@ -125,8 +147,7 @@ export default function Footer() {
 
         <div className="mt-12 border-t border-white/20 pt-6 text-center">
           <p>
-            &copy; {new Date().getFullYear()} Công ty TNHH Tư vấn và Đào tạo
-            Giáo dục Sài Gòn. Tất cả quyền được bảo lưu.
+            &copy; {new Date().getFullYear()} Giáo dục Sài Gòn. Tất cả quyền được bảo lưu.
           </p>
         </div>
       </div>

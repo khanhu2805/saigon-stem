@@ -31,7 +31,7 @@ export default function Header() {
             {/* <div className="h-10 w-10 rounded-full bg-[#40C262] flex items-center justify-center text-white font-bold text-lg">
               SG
             </div> */}
-            <Image src={"/logosgs.svg"} alt="LOGO" height={64} width={64} />
+            <Image src={"/logosgs.png"} alt="LOGO" height={64} width={64} />
           </div>
           <span className="font-bold text-[#024AAE] md:text-lg md:inline-block">
             GIÁO DỤC SÀI GÒN
