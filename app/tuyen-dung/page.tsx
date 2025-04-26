@@ -435,36 +435,36 @@ const openPositions = [
       "Chúng tôi đang tìm kiếm giáo viên Robotics có kinh nghiệm lập trình và điều khiển robot để tham gia đội ngũ giáo viên của chúng tôi.",
     image: "/placeholder.svg?height=300&width=500",
   },
-  {
-    title: "Chuyên viên phát triển chương trình",
-    location: "TP. Hồ Chí Minh",
-    deadline: "15/05/2023",
-    description:
-      "Chúng tôi đang tìm kiếm chuyên viên phát triển chương trình có kinh nghiệm trong lĩnh vực giáo dục để tham gia đội ngũ của chúng tôi.",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    title: "Nhân viên tư vấn tuyển sinh",
-    location: "TP. Hồ Chí Minh",
-    deadline: "15/05/2023",
-    description:
-      "Chúng tôi đang tìm kiếm nhân viên tư vấn tuyển sinh có kỹ năng giao tiếp tốt và hiểu biết về giáo dục để tham gia đội ngũ của chúng tôi.",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    title: "Nhân viên marketing",
-    location: "TP. Hồ Chí Minh",
-    deadline: "10/05/2023",
-    description:
-      "Chúng tôi đang tìm kiếm nhân viên marketing có kinh nghiệm trong lĩnh vực giáo dục để tham gia đội ngũ của chúng tôi.",
-    image: "/placeholder.svg?height=300&width=500",
-  },
-  {
-    title: "Trợ giảng",
-    location: "TP. Hồ Chí Minh",
-    deadline: "10/05/2023",
-    description:
-      "Chúng tôi đang tìm kiếm trợ giảng có đam mê với giáo dục STEM và Robotics để tham gia đội ngũ của chúng tôi.",
-    image: "/placeholder.svg?height=300&width=500",
-  },
+  // {
+  //   title: "Chuyên viên phát triển chương trình",
+  //   location: "TP. Hồ Chí Minh",
+  //   deadline: "15/05/2023",
+  //   description:
+  //     "Chúng tôi đang tìm kiếm chuyên viên phát triển chương trình có kinh nghiệm trong lĩnh vực giáo dục để tham gia đội ngũ của chúng tôi.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  // },
+  // {
+  //   title: "Nhân viên tư vấn tuyển sinh",
+  //   location: "TP. Hồ Chí Minh",
+  //   deadline: "15/05/2023",
+  //   description:
+  //     "Chúng tôi đang tìm kiếm nhân viên tư vấn tuyển sinh có kỹ năng giao tiếp tốt và hiểu biết về giáo dục để tham gia đội ngũ của chúng tôi.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  // },
+  // {
+  //   title: "Nhân viên marketing",
+  //   location: "TP. Hồ Chí Minh",
+  //   deadline: "10/05/2023",
+  //   description:
+  //     "Chúng tôi đang tìm kiếm nhân viên marketing có kinh nghiệm trong lĩnh vực giáo dục để tham gia đội ngũ của chúng tôi.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  // },
+  // {
+  //   title: "Trợ giảng",
+  //   location: "TP. Hồ Chí Minh",
+  //   deadline: "10/05/2023",
+  //   description:
+  //     "Chúng tôi đang tìm kiếm trợ giảng có đam mê với giáo dục STEM và Robotics để tham gia đội ngũ của chúng tôi.",
+  //   image: "/placeholder.svg?height=300&width=500",
+  // },
 ];

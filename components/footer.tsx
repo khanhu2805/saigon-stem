@@ -58,7 +58,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>0908485267</p>
+                <p>0906 697 918</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />
@@ -76,7 +76,7 @@ export default function Footer() {
               </div>
               <div className="flex items-center space-x-3">
                 <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
-                <p>0834432761</p>
+                <p>0834 432 761</p>
               </div>
               <div className="flex items-center space-x-3">
                 <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />

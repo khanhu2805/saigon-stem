@@ -33,9 +33,7 @@ const formSchema = z.object({
   subject: z.string().min(5, {
     message: "Vui lòng nhập tiêu đề (tối thiểu 5 ký tự).",
   }),
-  message: z.string().min(10, {
-    message: "Vui lòng nhập nội dung (tối thiểu 10 ký tự).",
-  }),
+  message: z.string().optional(),
 });
 
 export default function ContactPage() {
@@ -99,7 +97,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="mb-2 font-semibold">Địa chỉ</h3>
                     <p className="text-muted-foreground">
-                      123 Nguyễn Văn Linh, Quận 7, TP. Hồ Chí Minh
+                    36 Lê Quý Đôn, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh
                     </p>
                   </div>
                 </div>
@@ -110,7 +108,7 @@ export default function ContactPage() {
                   </div>
                   <div>
                     <h3 className="mb-2 font-semibold">Điện thoại</h3>
-                    <p className="text-muted-foreground">028 1234 5678</p>
+                    <p className="text-muted-foreground">0906 697 918</p>
                   </div>
                 </div>
 
@@ -121,7 +119,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="mb-2 font-semibold">Email</h3>
                     <p className="text-muted-foreground">
-                      info@giaoduc-saigon.vn
+                    saigonstemhr@gmail.com
                     </p>
                   </div>
                 </div>
@@ -133,19 +131,15 @@ export default function ContactPage() {
                   <div>
                     <h3 className="mb-2 font-semibold">Giờ làm việc</h3>
                     <p className="text-muted-foreground">
-                      Thứ Hai - Thứ Sáu: 8:00 - 17:30
+                      Thứ Hai - Thứ Sáu: 8:00 - 17:00
                     </p>
-                    <p className="text-muted-foreground">
-                      Thứ Bảy: 8:00 - 12:00
-                    </p>
-                    <p className="text-muted-foreground">Chủ Nhật: Nghỉ</p>
                   </div>
                 </div>
               </div>
 
               <div className="h-[300px] w-full overflow-hidden rounded-lg bg-gray-200">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3920.0397261706638!2d106.70232687589848!3d10.728592989415192!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31752f9023a3a85d%3A0x9d76b0035f6d53d0!2zMTIzIE5ndXnhu4VuIFbEg24gTGluaCwgVMOibiBQaMO6LCBRdeG6rW4gNywgVGjDoG5oIHBo4buRIEjhu5MgQ2jDrSBNaW5oLCBWaeG7h3QgTmFt!5e0!3m2!1svi!2s!4v1681234567890!5m2!1svi!2s"
+                  src="https://maps.google.com/maps?q=36+L%C3%AA+Qu%C3%BD+%C4%90%C3%B4n&output=embed"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

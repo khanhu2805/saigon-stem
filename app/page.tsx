@@ -62,7 +62,7 @@ const programs = [
   {
     title: "Kỹ năng sống",
     desc: "Trang bị kỹ năng thiết yếu để tự tin và thành công.",
-    icon: <Users className="h-8 w-8 text-[#40C262]" />,
+    icon: <Users className="h-8 w-8 text-[#024AAE]" />,
     tabValue: "life",
   },
 ];
@@ -184,78 +184,78 @@ export default function Home() {
                 yOffset={20}
                 delay={0.2 * index}
               >
-                <Card className="group hover:shadow-xl transition-shadow">
-                  <CardHeader>
-                    <div className="mb-4 flex justify-center">
-                      {service.icon}
-                    </div>
-                    <CardTitle className="text-center">
-                      {service.title}
-                    </CardTitle>
-                  </CardHeader>
-                  <CardContent className="text-center h-20">
-                    <p className="text-muted-foreground">{service.desc}</p>
-                  </CardContent>
-                  <div className="p-6">
-                    <Link hidden href="/chuong-trinh-dao-tao">
+                <Link href={`/chuong-trinh-dao-tao#${service.tabValue}`}>
+                  <Card className="group hover:shadow-xl transition-shadow">
+                    <CardHeader>
+                      <div className="mb-4 flex justify-center">
+                        {service.icon}
+                      </div>
+                      <CardTitle className="text-center">
+                        {service.title}
+                      </CardTitle>
+                    </CardHeader>
+                    <CardContent className="text-center h-20">
+                      <p className="text-muted-foreground">{service.desc}</p>
+                    </CardContent>
+                    <div className="p-6 flex justify-center">
                       <Button
-                        variant="ghost"
-                        className="group-hover:text-[#024AAE]"
+                        variant="outline"
+                        className="border-[#024AAE] text-[#024AAE] hover:bg-[#024AAE] hover:text-white"
                       >
                         Khám phá
+                        <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
-                    </Link>
-                  </div>
-                </Card>
-              </FadeInSection>
-            ))}
-          </div>
-          <FadeInSection yOffset={20} delay={0.2}>
-            <h2 className="text-4xl font-bold text-center text-[#024AAE] mb-12">
-              Các đầu sách đã phát hành
-            </h2>
-          </FadeInSection>
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8">
-            {sampleBooks.slice(0, 6).map((book, index) => ( // Display first 6 books
-              <FadeInSection
-                key={book.slug}
-                vertical={true}
-                yOffset={20}
-                delay={0.1 * index} // Stagger animation for books
-              >
-                <Link href={`/sach/${book.slug}`} className="group block"> {/* Link the cover */}
-                  <div className="aspect-[2/3] relative overflow-hidden rounded-md shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
-                    <Image
-                      src={book.coverImage}
-                      alt={book.title}
-                      fill
-                      sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16.6vw" // Optimize image loading
-                      className="object-cover"
-                    />
-                    {/* Optional: Add title overlay on hover
-                    <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-end justify-center p-2">
-                      <p className="text-white text-xs text-center font-medium">{book.title}</p>
                     </div>
-                    */}
-                  </div>
+                  </Card>
                 </Link>
               </FadeInSection>
-              
             ))}
           </div>
-          <FadeInSection yOffset={20} delay={0.7}>
+
+          {/* === BẮT ĐẦU KHỐI COMMENT SÁCH === */}
+          {/*
+          <FadeInSection yOffset={20} delay={0.2}>
+             <h2 className="text-4xl font-bold text-center text-[#024AAE] mb-12">
+               Các đầu sách đã phát hành
+             </h2>
+           </FadeInSection> 
+           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-6 md:gap-8">
+             {sampleBooks.slice(0, 6).map((book, index) => ( 
+               <FadeInSection
+                 key={book.slug}
+                 vertical={true}
+                 yOffset={20}
+                 delay={0.1 * index} 
+               >
+                 <Link href={`/sach/${book.slug}`} className="group block"> 
+                   <div className="aspect-[2/3] relative overflow-hidden rounded-md shadow-lg transition-all duration-300 group-hover:shadow-xl group-hover:-translate-y-1">
+                     <Image
+                       src={book.coverImage}
+                       alt={book.title}
+                       fill
+                       sizes="(max-width: 640px) 50vw, (max-width: 768px) 33vw, (max-width: 1024px) 25vw, 16.6vw" 
+                       className="object-cover"
+                     />
+                   </div>
+                 </Link>
+               </FadeInSection>
+             ))}
+           </div>
+           <FadeInSection yOffset={20} delay={0.7}>
              <div className="mt-12 text-center">
-                <Link href="/sach">
-                  <Button
-                    variant="outline"
-                    className="border-[#024AAE] text-[#024AAE] hover:bg-[#024AAE] hover:text-white"
-                  >
-                    Xem tất cả sách
-                    <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-              </div>
-          </FadeInSection>
+               <Link href="/sach">
+                 <Button
+                   variant="outline"
+                   className="border-[#024AAE] text-[#024AAE] hover:bg-[#024AAE] hover:text-white"
+                 >
+                   Xem tất cả sách
+                   <ArrowRight className="ml-2 h-4 w-4" />
+                 </Button>
+               </Link>
+             </div>
+           </FadeInSection>
+           */}
+          {/* === KẾT THÚC KHỐI COMMENT SÁCH === */}
         </div>
       </section>
 

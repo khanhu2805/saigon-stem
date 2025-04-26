@@ -34,8 +34,8 @@ const formSchema = z.object({
 export default function ConsultationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const form = useForm({
-    // resolver: zodResolver(formSchema),
+  const form = useForm<z.infer<typeof formSchema>>({
+    resolver: zodResolver(formSchema),
     defaultValues: {
       name: "",
       email: "",
@@ -142,7 +142,7 @@ export default function ConsultationForm() {
             name="message"
             render={({ field }) => (
               <FormItem>
-                <FormLabel>Nội dung cần tư vấn (không bắt buộc)</FormLabel>
+                <FormLabel>Nội dung cần tư vấn</FormLabel>
                 <FormControl>
                   <Textarea
                     placeholder="Nhập nội dung cần tư vấn"
