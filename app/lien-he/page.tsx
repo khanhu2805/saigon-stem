@@ -74,7 +74,7 @@ export default function ContactPage() {
           <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
             Liên hệ
           </h1>
-          <p className="max-w-2xl text-lg">
+          <p className="max-w-2xl text-xl italic">
             Liên hệ với chúng tôi để được tư vấn và hỗ trợ
           </p>
         </div>

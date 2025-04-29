@@ -97,6 +97,7 @@ export default function RecruitmentPage() {
           src="/placeholder.svg?height=800&width=1600"
           alt="Tuyển dụng"
           fill
+          hidden
           className="object-cover"
           priority
         />
@@ -104,7 +105,7 @@ export default function RecruitmentPage() {
           <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
             Tuyển dụng
           </h1>
-          <p className="max-w-2xl text-lg">
+          <p className="max-w-2xl text-xl italic">
             Tham gia đội ngũ của chúng tôi và cùng nhau tạo nên những giá trị
             giáo dục tích cực
           </p>
@@ -235,10 +236,12 @@ export default function RecruitmentPage() {
             {openPositions.map((position, index) => (
               <Card key={index} className="overflow-hidden">
                 <div className="relative h-48 w-full">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#024AAE]/80 to-[#40C262]/60 z-10"></div>
                   <Image
                     src={position.image || "/placeholder.svg"}
                     alt={position.title}
                     fill
+                    hidden
                     className="object-cover"
                   />
                 </div>

@@ -88,7 +88,7 @@ export default function AboutPage() {
             Về Chúng Tôi
           </h1>
           {/* Giảm kích thước chữ subtitle */}
-          <p className="max-w-3xl text-lg animate-slide-in delay-100">
+          <p className="max-w-3xl text-xl animate-slide-in delay-100 italic">
             Hành trình hơn {new Date().getFullYear() - 1996} năm đồng hành cùng giáo dục Việt Nam
           </p>
         </div>
@@ -107,7 +107,11 @@ export default function AboutPage() {
                 Công ty TNHH Đầu Tư Và Phát Triển Giáo Dục Sài Gòn, thành lập năm 2010, với hơn 14 năm kinh nghiệm chuyên sâu trong lĩnh vực xuất bản, in ấn và phát hành sách tham khảo, sách bổ trợ. Chúng tôi tự hào đã mang đến hơn <Link href='/sach'><strong className="text-[#024AAE]">150 đầu sách</strong></Link> chất lượng cho học sinh cả nước.
               </p>
               <p>
-                Để tiếp tục sứ mệnh phát triển giáo dục và mở rộng chiến lược, năm 2021, Công ty TNHH Tư Vấn Và Đào Tạo Giáo Dục Sài Gòn ra đời, tập trung vào lĩnh vực đào tạo giáo dục<strong className="text-[#40C262]"> STEM, KỸ NĂNG CÔNG DÂN SỐ</strong> và <strong className="text-[#40C262]">KỸ NĂNG SỐNG</strong>, trang bị hành trang vững chắc cho thế hệ trẻ trong kỷ nguyên mới.
+                Để tiếp tục sứ mệnh phát triển giáo dục và mở rộng chiến lược, năm 2021, 
+                Công ty TNHH Tư Vấn Và Đào Tạo Giáo Dục Sài Gòn ra đời, tập trung vào lĩnh vực đào tạo giáo dục
+                <strong className="text-[#40C262]"> <Link href="/chuong-trinh-dao-tao#stem">STEM</Link>, 
+                <Link href="/chuong-trinh-dao-tao#cds"> KỸ NĂNG CÔNG DÂN SỐ</Link></strong> và 
+                <strong className="text-[#40C262]"><Link href="/chuong-trinh-dao-tao#kns"> KỸ NĂNG SỐNG</Link></strong>, trang bị hành trang vững chắc cho thế hệ trẻ trong kỷ nguyên mới.
               </p>
             </div>
           </FadeInSection>
@@ -122,7 +126,7 @@ export default function AboutPage() {
               Câu Chuyện Hình Thành
             </h2>
           </FadeInSection>
-          <div className="relative max-w-4xl mx-auto mb-16">
+          <div className="relative max-w-5xl mx-auto mb-16">
             <div className="absolute left-1/2 transform -translate-x-1/2 w-1 bg-[#40C262] h-full z-0 rounded-full"></div>
             {timelineEvents.map((event, index) => (
               <FadeInSection key={index} vertical={true} yOffset={20} delay={0.4 + index * 0.2}>

@@ -57,13 +57,13 @@ const programs = [
     title: "Kỹ năng công dân số",
     desc: "Trang bị kiến thức an toàn trực tuyến, tư duy phản biện và đạo đức số.",
     icon: <Globe className="h-8 w-8 text-[#40C262]" />,
-    tabValue: "digital",
+    tabValue: "cds",
   },
   {
     title: "Kỹ năng sống",
     desc: "Trang bị kỹ năng thiết yếu để tự tin và thành công.",
     icon: <Users className="h-8 w-8 text-[#024AAE]" />,
-    tabValue: "life",
+    tabValue: "kns",
   },
 ];
 

@@ -55,18 +55,18 @@ export default function NewsPage() {
      {/* Hero Section */}
      <section className="relative h-[400px] w-full overflow-hidden">
        <div className="absolute inset-0 bg-gradient-to-r from-[#024AAE]/80 to-[#40C262]/60 z-10"></div>
-       <Image
+       {/* <Image
          src="/news-images/banner.jpg" // Thay ảnh banner trang tin tức
          alt="Tin tức và sự kiện"
          fill
          className="object-cover"
          priority
-       />
+       /> */}
        <div className="container relative z-20 flex h-full flex-col items-center justify-center text-center text-white">
          <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
            Tin tức & Sự kiện
          </h1>
-         <p className="max-w-2xl text-lg leading-relaxed"> {/* Thêm giãn dòng */}
+         <p className="max-w-2xl text-xl italic leading-relaxed"> {/* Thêm giãn dòng */}
            Cập nhật những tin tức mới nhất về hoạt động của công ty và các sự
            kiện nổi bật trong lĩnh vực giáo dục.
          </p>
@@ -82,14 +82,16 @@ export default function NewsPage() {
              <Card key={index} className="overflow-hidden flex flex-col hover:shadow-lg transition-shadow duration-300"> {/* Thêm hiệu ứng đổ bóng khi hover */}
                {/* Phần ảnh và category */}
                <div className="relative h-48 w-full flex-shrink-0">
+                <div className="absolute inset-0 bg-gradient-to-r from-[#024AAE]/80 to-[#40C262]/60 z-10"></div>
                  <Image
                    src={news.image || "/placeholder.svg"} // Nên có ảnh mặc định khác placeholder.svg
                    alt={news.title}
                    fill
+                   hidden
                    className="object-cover"
                  />
                  {/* Hiển thị category */}
-                 <div className="absolute top-2 right-2 bg-[#024AAE] px-3 py-1 text-xs font-medium text-white rounded-md shadow"> {/* Di chuyển lên góc, bo tròn */}
+                 <div className="absolute top-2 right-2 bg-[#024AAE] px-3 py-1 text-xs font-medium text-white rounded-md shadow z-20"> {/* Di chuyển lên góc, bo tròn */}
                    {news.category}
                  </div>
                </div>
