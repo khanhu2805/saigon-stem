@@ -6,4 +6,4 @@ Allow: /
 Host: https://giaoducsaigon.edu.vn
 
 # Sitemaps
-Sitemap: https://giaoducsaigon.edu.vn/sitemap-0.xml
+Sitemap: https://giaoducsaigon.edu.vn/sitemap.xml
