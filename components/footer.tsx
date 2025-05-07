@@ -114,20 +114,20 @@ export default function Footer() {
           <div>
             <h3 className="mb-4 text-lg font-bold">Kết nối với chúng tôi</h3>
             <div className="flex space-x-4">
-              <Link
+              <a
                 target="_blank"
                 href="https://www.facebook.com/SaigonStem2023"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#024AAE] hover:bg-[#40C262] hover:text-white"
               >
                 <Facebook className="h-5 w-5" />
-              </Link>
-              <Link
+              </a>
+              <a
                 target="_blank"
                 href="https://www.youtube.com/@SAIGONSTEM"
                 className="flex h-10 w-10 items-center justify-center rounded-full bg-white text-[#024AAE] hover:bg-[#40C262] hover:text-white"
               >
                 <Youtube className="h-5 w-5" />
-              </Link>
+              </a>
             </div>
             <div className="mt-4">
               <h4 className="mb-2 font-medium">Đăng ký nhận tin</h4>
