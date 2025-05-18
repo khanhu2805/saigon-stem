@@ -1,9 +1,10 @@
 # *
 User-agent: *
-Allow: /
+Disallow: /admin/
 
 # Host
 Host: https://giaoducsaigon.edu.vn
 
 # Sitemaps
 Sitemap: https://giaoducsaigon.edu.vn/sitemap.xml
+Sitemap: https://giaoducsaigon.edu.vn/sitemap-0.xml
