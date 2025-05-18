@@ -33,7 +33,7 @@ const formSchema = z.object({
 
 export default function ConsultationForm() {
   const [isSubmitting, setIsSubmitting] = useState(false);
-
+  type ConsultationFormValues = z.infer<typeof formSchema>;
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {
@@ -48,54 +48,60 @@ export default function ConsultationForm() {
     console.log("ConsultationForm mounted");
   }, []);
 
-  function onSubmit(values: any) {
+  async function onSubmit(values: ConsultationFormValues) { // Sử dụng kiểu đã định nghĩa
     setIsSubmitting(true);
     console.log("Submitting form with values:", values);
 
-    setTimeout(() => {
-      try {
-        console.log("Triggering toast...");
-        toast({
-          title: "Gửi thông tin thành công!",
-          description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
-          variant: "default",
-          duration: 5000,
-        });
-        form.reset();
-        console.log("Form reset and toast triggered");
-      } catch (error) {
-        console.error("Toast error:", error);
+    try {
+      const response = await fetch('/api/send-consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
+      });
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        // Nếu server trả về lỗi (status code không phải 2xx)
+        console.error("API Error:", result);
         toast({
           title: "Lỗi!",
-          description: "Không thể gửi thông tin. Vui lòng thử lại.",
+          description: result.error || "Không thể gửi thông tin. Vui lòng thử lại.",
           variant: "destructive",
           duration: 5000,
         });
-      } finally {
-        setIsSubmitting(false);
+      } else {
+        // Thành công
+        console.log("Triggering success toast...");
+        toast({
+          title: "Gửi thông tin thành công!",
+          description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
+          variant: "default", // Hoặc "success" nếu bạn có variant đó
+          duration: 5000,
+        });
+        form.reset(); // Reset form sau khi gửi thành công
+        console.log("Form reset and toast triggered");
       }
-    }, 1000);
-  }
-
-  function testToast() {
-    console.log("Testing toast...");
-    try {
+    } catch (error) {
+      // Lỗi mạng hoặc lỗi không parse được JSON
+      console.error("Network/Fetch error:", error);
       toast({
-        title: "Kiểm tra Toast",
-        description: "Đây là toast kiểm tra để xác nhận hiển thị.",
-        variant: "default",
+        title: "Lỗi Mạng!",
+        description: "Không thể kết nối đến máy chủ. Vui lòng kiểm tra lại đường truyền.",
+        variant: "destructive",
         duration: 5000,
       });
-      console.log("Test toast triggered");
-    } catch (error) {
-      console.error("Test toast error:", error);
+    } finally {
+      setIsSubmitting(false);
     }
   }
 
   return (
     <div className="relative">
       <Form {...form} >
-        <form onSubmit={form.handleSubmit(testToast)} className="space-y-6" >
+        <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-6" >
           <FormField
             control={form.control}
             name="name"

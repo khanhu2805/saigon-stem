@@ -49,20 +49,55 @@ export default function ContactPage() {
       message: "",
     },
   });
-
-  function onSubmit(values: z.infer<typeof formSchema>) {
+  type ConsultationFormValues = z.infer<typeof formSchema>;
+  async function onSubmit(values: ConsultationFormValues) { // Sử dụng kiểu đã định nghĩa
     setIsSubmitting(true);
+    console.log("Submitting form with values:", values);
 
-    // Simulate API call
-    setTimeout(() => {
-      console.log(values);
-      setIsSubmitting(false);
-      form.reset();
-      toast({
-        title: "Gửi thông tin thành công!",
-        description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
+    try {
+      const response = await fetch('/api/send-consultation', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(values),
       });
-    }, 1000);
+
+      const result = await response.json();
+
+      if (!response.ok) {
+        // Nếu server trả về lỗi (status code không phải 2xx)
+        console.error("API Error:", result);
+        toast({
+          title: "Lỗi!",
+          description: result.error || "Không thể gửi thông tin. Vui lòng thử lại.",
+          variant: "destructive",
+          duration: 5000,
+        });
+      } else {
+        // Thành công
+        console.log("Triggering success toast...");
+        toast({
+          title: "Gửi thông tin thành công!",
+          description: "Chúng tôi sẽ liên hệ với bạn trong thời gian sớm nhất.",
+          variant: "default", // Hoặc "success" nếu bạn có variant đó
+          duration: 5000,
+        });
+        form.reset(); // Reset form sau khi gửi thành công
+        console.log("Form reset and toast triggered");
+      }
+    } catch (error) {
+      // Lỗi mạng hoặc lỗi không parse được JSON
+      console.error("Network/Fetch error:", error);
+      toast({
+        title: "Lỗi Mạng!",
+        description: "Không thể kết nối đến máy chủ. Vui lòng kiểm tra lại đường truyền.",
+        variant: "destructive",
+        duration: 5000,
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
   }
 
   return (
@@ -138,8 +173,10 @@ export default function ContactPage() {
               </div>
 
               <div className="h-[300px] w-full overflow-hidden rounded-lg bg-gray-200">
+                
                 <iframe
-                  src="https://maps.google.com/maps?q=36+L%C3%AA+Qu%C3%BD+%C4%90%C3%B4n&output=embed"
+                  // src="https://maps.google.com/maps?q=36+L%C3%AA+Qu%C3%BD+%C4%90%C3%B4n&output=embed"
+                  src="https://www.google.com/maps/embed/v1/place?q=36%20L%C3%AA%20Qu%C3%BD%20%C4%90%C3%B4n%2C%20ph%C6%B0%E1%BB%9Dng%20V%C3%B5%20Th%E1%BB%8B%20S%C3%A1u&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}
@@ -147,6 +184,7 @@ export default function ContactPage() {
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
                 ></iframe>
+                
               </div>
             </div>
 
