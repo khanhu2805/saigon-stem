@@ -38,7 +38,8 @@ export function Toaster() {
           </Toast>
         );
       })}
-      <ToastViewport className="fixed top-4 right-4 z-[10000] w-[320px] max-w-[90vw]" />
+      {/* <ToastViewport className="fixed top-4 right-4 z-[10000] w-[320px] max-w-[90vw]" /> */}
+      <ToastViewport className="fixed top-4 left-1/2 -translate-x-1/2 z-[10000] w-[320px] max-w-[90vw]" />
     </ToastProvider>
   );
 }

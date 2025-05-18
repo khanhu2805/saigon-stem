@@ -14,10 +14,7 @@ export const metadata: Metadata = {
   // Đặt URL cơ sở cho website, hữu ích cho việc tạo URL tuyệt đối cho sitemap và canonical.
   metadataBase: new URL('https://giaoducsaigon.edu.vn'), // << THAY TÊN MIỀN CỦA BẠN TẠI ĐÂY
 
-  title: {
-    default: 'Giáo Dục Sài Gòn - Đào Tạo STEM, Kỹ Năng Sống & Công Dân Số', // Title mặc định cho website
-    template: '%s | Giáo Dục Sài Gòn', // Template cho title của các trang con, %s sẽ được thay thế
-  },
+  title:'Giáo Dục Sài Gòn - Đào Tạo STEM, Kỹ Năng Sống & Công Dân Số', 
   description: 'Công ty TNHH Tư Vấn Và Đào Tạo Giáo Dục Sài Gòn - Chuyên cung cấp các chương trình đào tạo STEM, kỹ năng sống, kỹ năng công dân số và xuất bản sách giáo dục chất lượng cao, góp phần trang bị kiến thức cho thế hệ trẻ Việt Nam.',
 
   openGraph: {
@@ -48,7 +45,7 @@ export const metadata: Metadata = {
   },
 
   // Từ khóa chung cho website (Google ít dựa vào thẻ keywords này nữa, nhưng có thể thêm nếu muốn)
-  // keywords: ['Giáo Dục Sài Gòn', 'đào tạo STEM', 'kỹ năng sống', 'công dân số', 'sách giáo dục', 'TPHCM', 'sách', 'giáo dục sài gòn', 'tư vấn và đào tạo giáo dục sài gòn', 'saigon stem', 'sài gòn stem', 'đầu tư và phát triển giáo dục sài gòn'],
+  keywords: ['Giáo Dục Sài Gòn', 'đào tạo STEM', 'kỹ năng sống', 'công dân số', 'sách giáo dục', 'TPHCM', 'sách', 'giáo dục sài gòn', 'tư vấn và đào tạo giáo dục sài gòn', 'saigon stem', 'sài gòn stem', 'đầu tư và phát triển giáo dục sài gòn'],
 };
 
 

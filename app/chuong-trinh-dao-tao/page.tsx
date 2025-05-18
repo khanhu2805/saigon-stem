@@ -1,5 +1,3 @@
-// src/app/chuong-trinh-dao-tao/page.tsx (hoặc file trang chương trình của bạn)
-
 'use client'; // !! BẮT BUỘC: Đánh dấu đây là Client Component
 
 import Image from "next/image";
@@ -18,7 +16,6 @@ import {
 } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
-// --- Dữ liệu mẫu (Đảm bảo bạn có các biến này hoặc import chúng) ---
 const stemPrograms = [
   {
     title: "STEM cho học sinh Tiểu học",

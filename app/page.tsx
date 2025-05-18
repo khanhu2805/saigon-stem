@@ -7,12 +7,6 @@ import FadeInSection from "@/components/ui/fade-in-section";
 import ConsultationForm from "@/components/consultation-form";
 import Slideshow from "@/components/ui/slide-show";
 import CountUp from "@/components/ui/count-up";
-import { Metadata } from 'next';
-
-export const metadata: Metadata = {
-  title: '',
-  description: 'www'
-};
 
 const slides = [
   {
