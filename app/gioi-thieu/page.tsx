@@ -6,7 +6,6 @@ import Link from "next/link";
 
 export default function AboutPage() {
   const timelineEvents = [
-    { year: 1996, event: "Xuất bản những quyển sách đầu tay trong lĩnh vực giáo dục." },
     { year: 2010, event: "Thành lập Công ty TNHH Đầu Tư Và Phát Triển Giáo Dục Sài Gòn, chuyên xuất bản và phát hành sách." },
     { year: 2021, event: "Thành lập Công ty TNHH Tư Vấn Và Đào Tạo Giáo Dục Sài Gòn, mở rộng sang lĩnh vực đào tạo STEM, Kỹ năng công dân số và Kỹ năng sống." },
     { year: new Date().getFullYear(), event: "Không ngừng phát triển, mang đến các sản phẩm và dịch vụ giáo dục chất lượng." },
@@ -89,7 +88,7 @@ export default function AboutPage() {
           </h1>
           {/* Giảm kích thước chữ subtitle */}
           <p className="max-w-3xl text-xl animate-slide-in delay-100 italic">
-            Hành trình hơn {new Date().getFullYear() - 1996} năm đồng hành cùng giáo dục Việt Nam
+            Hành trình hơn {new Date().getFullYear() - 2010} năm đồng hành cùng giáo dục Việt Nam
           </p>
         </div>
       </section>

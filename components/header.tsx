@@ -15,6 +15,7 @@ const navItems = [
   { href: "/chuong-trinh-dao-tao", label: "Chương trình đào tạo" },
   { href: "/sach", label: "Sách" },
   // { href: "/tin-tuc", label: "Tin tức - sự kiện" },
+  { href: "/law", label: "Cơ sở pháp lý" },
   { href: "/tuyen-dung", label: "Tuyển dụng" },
   { href: "/lien-he", label: "Liên hệ" },
 ];
