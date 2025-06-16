@@ -20,7 +20,7 @@ export default function NotFound() {
 
         {/* Thay đổi tiêu đề */}
         <h1 className="text-3xl font-semibold text-gray-800 mb-4">
-          Trang đang được phát triển
+          Trang không có
         </h1>
 
         {/* Thay đổi mô tả */}

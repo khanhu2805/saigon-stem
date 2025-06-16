@@ -18,6 +18,14 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const stemPrograms = [
   {
+    title: "STEM cho lứa tuổi Mầm non",
+    slug: "stem-mam-non",
+    ageGroup: "Dành cho trẻ 4-6 tuổi",
+    description:
+      "Chương trình STEM cho lứa tuổi mầm non, khơi dậy sự tò mò và niềm yêu thích khoa học qua các hoạt động vui chơi, khám phá.",
+    image: "/placeholder.svg?height=300&width=500", // Thay bằng ảnh thật
+  },
+  {
     title: "STEM cho học sinh Tiểu học",
     slug: "stem-tieu-hoc",
     ageGroup: "Dành cho học sinh 6-11 tuổi",
@@ -58,11 +66,11 @@ const roboticsPrograms = [
 
 const digitalPrograms = [
   {
-    title: "An toàn trực tuyến",
-    slug: "an-toan-truc-tuyen",
-    ageGroup: "Dành cho học sinh 8-12 tuổi",
+    title: "Kĩ năng công dân số Tiểu học",
+    slug: "ki-nang-cong-dan-so-tieu-hoc",
+    ageGroup: "Dành cho học sinh 6-11 tuổi",
     description:
-      "Chương trình giúp học sinh hiểu và áp dụng các biện pháp bảo vệ thông tin cá nhân, nhận diện và phòng tránh các nguy cơ trực tuyến.",
+      "Chương trình trang bị cho học sinh các kĩ năng cần thiết để trở thành công dân số có trách nhiệm.",
     image: "/placeholder.svg?height=300&width=500", // Thay bằng ảnh thật
   },
   // Thêm các chương trình Digital Citizenship khác nếu có
@@ -119,7 +127,7 @@ export default function ProgramsPage() {
         />
         <div className="container relative z-20 flex h-full flex-col items-center justify-center text-center text-white">
           <h1 className="mb-4 text-4xl font-bold tracking-tight sm:text-5xl">
-            Chương Trình Đào Tạo
+            Chương trình đào tạo
           </h1>
           <p className="max-w-2xl text-xl italic">
             Khám phá các chương trình đào tạo đa dạng, được thiết kế phù hợp với
@@ -206,7 +214,8 @@ export default function ProgramsPage() {
                     </CardContent>
                     <CardFooter className="mt-auto"> {/* mt-auto */}
                       <Link
-                        href={`/chuong-trinh-dao-tao/stem/${program.slug}`}
+                        href={'/'}
+                        // href={`/chuong-trinh-dao-tao/stem/${program.slug}`}
                         className="w-full"
                       >
                         <Button className="w-full bg-[#40C262] hover:bg-[#40C262]/90">
@@ -252,7 +261,8 @@ export default function ProgramsPage() {
                     </CardContent>
                     <CardFooter className="mt-auto">
                       <Link
-                        href={`/chuong-trinh-dao-tao/robotics/${program.slug}`}
+                        href={'/'}
+                        // href={`/chuong-trinh-dao-tao/robotics/${program.slug}`}
                         className="w-full"
                       >
                         <Button className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90">
@@ -299,7 +309,8 @@ export default function ProgramsPage() {
                     </CardContent>
                     <CardFooter className="mt-auto">
                       <Link
-                        href={`/chuong-trinh-dao-tao/cong-dan-so/${program.slug}`}
+                        href={'/'}
+                        // href={`/chuong-trinh-dao-tao/cong-dan-so/${program.slug}`}
                         className="w-full"
                       >
                         <Button className="w-full bg-[#40C262] hover:bg-[#40C262]/90">
@@ -346,7 +357,8 @@ export default function ProgramsPage() {
                     </CardContent>
                     <CardFooter className="mt-auto">
                       <Link
-                        href={`/chuong-trinh-dao-tao/ky-nang-song/${program.slug}`}
+                        href={'/'}
+                        // href={`/chuong-trinh-dao-tao/ky-nang-song/${program.slug}`}
                         className="w-full"
                       >
                         <Button className="w-full bg-[#024AAE] hover:bg-[#024AAE]/90">

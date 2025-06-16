@@ -39,8 +39,24 @@ const Slideshow = ({ slides }: { slides: Slide[] }) => {
     return () => clearInterval(interval);
   }, [isPlaying, currentSlide]);
 
+  // --- BẮT ĐẦU THAY ĐỔI ---
+
+  // Thêm các hàm xử lý sự kiện hover
+  const handleMouseEnter = () => {
+    setIsPlaying(false);
+  };
+
+  const handleMouseLeave = () => {
+    setIsPlaying(true);
+  };
+
   return (
-    <>
+    // Bọc toàn bộ component trong một thẻ div và thêm sự kiện
+    <div
+      className="relative w-full h-full" // Đảm bảo div này có kích thước
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
       {slides.map((slide, index) => (
         <div
           key={index}
@@ -83,7 +99,7 @@ const Slideshow = ({ slides }: { slides: Slide[] }) => {
       {/* Navigation arrows */}
       <button
         onClick={prevSlide}
-        className="absolute left-4 top-1/2 -translate-y-1/2 hover:text-[#024AAE] text-white p-2  z-10"
+        className="absolute left-4 top-1/2 -translate-y-1/2 hover:text-[#024AAE] text-white p-2 z-10"
         aria-label="Previous slide"
       >
         <svg
@@ -123,49 +139,7 @@ const Slideshow = ({ slides }: { slides: Slide[] }) => {
       </button>
 
       {/* Play/Pause button */}
-      {/* <button
-        onClick={() => setIsPlaying(!isPlaying)}
-        className="absolute bottom-4 right-4 bg-white/30 hover:bg-white/50 text-white p-2 rounded-full z-10"
-        aria-label={isPlaying ? "Pause slideshow" : "Play slideshow"}
-      >
-        {isPlaying ? (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M10 9v6m4-6v6m7-3a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        ) : (
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            className="h-6 w-6"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-          >
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"
-            />
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth={2}
-              d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"
-            />
-          </svg>
-        )}
-      </button> */}
+      {/* ... (phần này vẫn giữ nguyên) ... */}
 
       {/* Indicators */}
       <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex space-x-2 z-10">
@@ -180,7 +154,8 @@ const Slideshow = ({ slides }: { slides: Slide[] }) => {
           />
         ))}
       </div>
-    </>
+    </div> // Thẻ đóng của div bao bọc
+    // --- KẾT THÚC THAY ĐỔI ---
   );
 };
 
