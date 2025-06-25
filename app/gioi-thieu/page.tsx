@@ -1,8 +1,9 @@
 import Image from "next/image";
-import { Award, BookOpen, Target, Users, Smile, BookHeart } from "lucide-react"; // Bỏ ChevronRight nếu không dùng
+import { Award, BookOpen, Target, Users, Smile, BookHeart, User } from "lucide-react"; // Bỏ ChevronRight nếu không dùng
 import FadeInSection from "@/components/ui/fade-in-section";
 import CountUp from "@/components/ui/count-up";
 import Link from "next/link";
+import { Card } from "@/components/ui/card";
 
 export default function AboutPage() {
   const timelineEvents = [
@@ -69,6 +70,72 @@ export default function AboutPage() {
     },
   ];
 
+  const teamMembers = [
+  {
+    name: "Hoàng Văn Vương",
+    dob: "15/08/2001",
+    gender: "Nam",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Sư phạm Hóa học",
+  },
+  {
+    name: "Phạm Tăng Cát Lượng",
+    dob: "18/09/2000",
+    gender: "Nam",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Sư phạm Hóa học",
+  },
+  {
+    name: "Phạm Trí Nhân",
+    dob: "02/12/2001",
+    gender: "Nam",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Sư phạm Hóa học",
+  },
+  {
+    name: "Trần Thu Ngân",
+    dob: "04/02/2000",
+    gender: "Nữ",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Sư phạm Hóa học",
+  },
+  {
+    name: "Trương Đình Trung",
+    dob: "23/10/1999",
+    gender: "Nam",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Sư phạm Vật lý",
+  },
+  {
+    name: "Lê Ý Nhi",
+    dob: "18/10/1994",
+    gender: "Nữ",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Giáo dục Tiểu học",
+  },
+  {
+    name: "Lý Hồng Vân",
+    dob: "26/04/1979",
+    gender: "Nữ",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Giáo dục Tiểu học",
+  },
+  {
+    name: "Ngô Đức Cường",
+    dob: "24/12/1998",
+    gender: "Nam",
+    nationality: "Việt Nam",
+    role: "Giáo viên",
+    specialty: "Tâm lý học",
+  },
+];
 
   return (
     <main className="flex min-h-screen flex-col">
@@ -208,6 +275,34 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      <section className="py-24 bg-gray-50">
+        <div className="container">
+          <FadeInSection vertical={true} yOffset={20} delay={0.3}>
+            <h2 className="text-4xl font-bold text-center text-[#024AAE] mb-16">
+              Giáo Viên Giảng Dạy
+            </h2>
+          </FadeInSection>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {teamMembers.map((member, index) => (
+              <FadeInSection key={index} vertical={true} yOffset={20} delay={0.4 + index * 0.1}>
+                <Card className="h-full flex flex-col p-6 shadow-md hover:shadow-xl transition-shadow duration-300">
+                  {/* Phần Header với Icon, Tên và Chức vụ */}
+                  <div className="flex items-center space-x-4 mb-4">
+                    <div className="flex-shrink-0 w-12 h-12 rounded-full bg-[#024AAE]/10 flex items-center justify-center">
+                      <User className="w-6 h-6 text-[#024AAE]" />
+                    </div>
+                    <div className="flex-1">
+                      <h3 className="text-lg font-bold text-gray-900">{member.name}</h3>
+                      <p className="text-sm font-semibold text-[#024AAE]">Cử nhân {member.specialty}</p>
+                    </div>
+                  </div>
+                </Card>
+              </FadeInSection>
+            ))}
+          </div>
+        </div>
+      </section>
+      {/* --- KẾT THÚC: ĐỘI NGŨ CHUYÊN MÔN --- */}
 
     </main>
   );

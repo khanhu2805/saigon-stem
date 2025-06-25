@@ -126,19 +126,19 @@ export default function ContactPage() {
 
               <div className="mb-8 space-y-6">
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#024AAE]/10">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#024AAE]/10">
                     <MapPin className="h-6 w-6 text-[#024AAE]" />
                   </div>
                   <div>
                     <h3 className="mb-2 font-semibold">Địa chỉ</h3>
                     <p className="text-muted-foreground">
-                    36 Lê Quý Đôn, Phường Võ Thị Sáu, Quận 3, TP. Hồ Chí Minh
+                    Căn nhà số 19, Khu nhà ở CBCNVC Văn phòng B - Nhà khách Tổng Liên đoàn lao động Việt Nam, Đường TL17, Khu phố 3B, Phường Thạnh Lộc, Quận 12, TP. Hồ Chí Minh
                     </p>
                   </div>
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#024AAE]/10">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#024AAE]/10">
                     <Phone className="h-6 w-6 text-[#024AAE]" />
                   </div>
                   <div>
@@ -148,7 +148,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#024AAE]/10">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#024AAE]/10">
                     <Mail className="h-6 w-6 text-[#024AAE]" />
                   </div>
                   <div>
@@ -160,7 +160,7 @@ export default function ContactPage() {
                 </div>
 
                 <div className="flex items-start space-x-4">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-[#024AAE]/10">
+                  <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-[#024AAE]/10">
                     <Clock className="h-6 w-6 text-[#024AAE]" />
                   </div>
                   <div>
@@ -176,7 +176,7 @@ export default function ContactPage() {
                 
                 <iframe
                   // src="https://maps.google.com/maps?q=36+L%C3%AA+Qu%C3%BD+%C4%90%C3%B4n&output=embed"
-                  src="https://www.google.com/maps/embed/v1/place?q=36%20L%C3%AA%20Qu%C3%BD%20%C4%90%C3%B4n%2C%20ph%C6%B0%E1%BB%9Dng%20V%C3%B5%20Th%E1%BB%8B%20S%C3%A1u&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3918.2785011567476!2d106.68010461125411!3d10.866409389243199!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3175299c97d62c7f%3A0x1ccf0ac9102a9eb2!2zS2h1IG5ow6AgVOG7lW5nIExpw6puIMSQb8OgbiBMxJBWTi1WxINuIFBow7JuZyBC!5e0!3m2!1svi!2s!4v1750838564041!5m2!1svi!2s"
                   width="100%"
                   height="100%"
                   style={{ border: 0 }}

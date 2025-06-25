@@ -13,7 +13,7 @@ export default function Footer() {
   return (
     <footer className="bg-[#024AAE] text-white">
       <div className="w-full px-14 py-12">
-        <div className="grid grid-cols-1 gap-y-10 md:gap-x-8 md:grid-cols-2 lg:grid-cols-4"> {/* Thêm gap-y-10 cho mobile */}
+        <div className="grid grid-cols-1 gap-y-10 md:gap-x-8 md:grid-cols-2 lg:grid-cols-3"> {/* Thêm gap-y-10 cho mobile */}
           {/* Cột 1: Về chúng tôi */}
           <div>
             <h3 className="mb-4 text-lg font-bold">Về chúng tôi</h3>
@@ -39,30 +39,30 @@ export default function Footer() {
             {/* Phần này đã có space-y-3, ta sẽ điều chỉnh mt cho các nhóm tiêu đề bên trong */}
             <div className="space-y-3 text-base">
               {/* Quận Gò Vấp */}
-              <div>
+              {/* <div>
                 <p className="font-bold italic">Quận Gò Vấp</p>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
                   <p>362/4/22 Đường Thống Nhất, Phường 16, Quận Gò Vấp, TP. Hồ Chí Minh</p>
                 </div>
-              </div>
+              </div> */}
 
               {/* Quận 12 */}
               <div className="mt-5 md:mt-3"> {/* mt LỚN hơn trên mobile, nhỏ hơn trên desktop */}
-                <p className="font-bold italic">Quận 12</p>
+                {/* <p className="font-bold italic">Quận 12</p> */}
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
                   <p>Số 26 đường TL 19, Khu phố 3B, Phường Thạnh Lộc, Quận 12, TP. Hồ Chí Minh</p>
                 </div>
-                {/* Khoảng cách giữa 2 địa chỉ trong cùng quận 12 */}
-                <div className="flex items-start space-x-3 mt-2"> {/* Thêm mt-2 nhỏ ở đây */}
+                {/* Khoảng cách giữa 2 địa chỉ trong cùng quận 12 */}{/* Thêm mt-2 nhỏ ở đây */}
+                <div className="flex items-start space-x-3 mt-2"> 
                   <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
                   <p>Căn nhà số 19, Khu nhà ở CBCNVC Văn phòng B - Nhà khách Tổng Liên đoàn lao động Việt Nam, Đường TL17, Khu phố 3B, Phường Thạnh Lộc, Quận 12, TP. Hồ Chí Minh</p>
                 </div>
               </div>
 
-              {/* Văn phòng đại diện */}
-              <div className="mt-5 md:mt-3"> {/* mt LỚN hơn trên mobile, nhỏ hơn trên desktop */}
+     
+              {/* <div className="mt-5 md:mt-3"> 
                 <p className="font-bold italic">Văn phòng đại diện</p>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
@@ -70,45 +70,44 @@ export default function Footer() {
                 </div>
               </div>
 
-              {/* Thông tin liên hệ của Chi nhánh HCM */}
-              <div className="mt-5 md:mt-3"> {/* mt LỚN hơn trên mobile, nhỏ hơn trên desktop */}
+              <div className="mt-5 md:mt-3"> 
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
                   <p>0906 697 918</p>
                 </div>
               </div>
-              <div className="mt-2 md:mt-1"> {/* Khoảng cách nhỏ cho email */}
+              <div className="mt-2 md:mt-1"> 
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />
                   <p>saigonstemhr@gmail.com</p>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
 
-          {/* Cột 3: Chi nhánh Đồng Nai */}
-          <div>
+        
+          {/* <div>
             <h3 className="mb-4 text-lg font-bold">Chi nhánh Đồng Nai</h3>
             <div className="space-y-3 text-base">
               <div className="flex items-start space-x-3">
                 <MapPin className="h-5 w-5 shrink-0 text-[#40C262]" />
                 <p>81/70 Khu phố 11, Phường Tân Hòa, Thành phố Biên Hòa, Tỉnh Đồng Nai</p>
               </div>
-              {/* Thông tin liên hệ của Chi nhánh Đồng Nai */}
-              <div className="mt-5 md:mt-3"> {/* mt LỚN hơn trên mobile, nhỏ hơn trên desktop */}
+           
+              <div className="mt-5 md:mt-3"> 
                 <div className="flex items-center space-x-3">
                   <Phone className="h-5 w-5 shrink-0 text-[#40C262]" />
                   <p>0834 432 761</p>
                 </div>
               </div>
-              <div className="mt-2 md:mt-1"> {/* Khoảng cách nhỏ cho email */}
+              <div className="mt-2 md:mt-1"> 
                 <div className="flex items-center space-x-3">
                   <Mail className="h-5 w-5 shrink-0 text-[#40C262]" />
                   <p>gdsg.dnai@gmail.com</p>
                 </div>
               </div>
             </div>
-          </div>
+          </div> */}
 
           {/* Cột 4: Kết nối và Đăng ký nhận tin */}
           <div>
